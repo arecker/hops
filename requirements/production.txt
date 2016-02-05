@@ -1,0 +1,4 @@
+# Current version of django
+Django==1.9.2
+
+-r common.txt

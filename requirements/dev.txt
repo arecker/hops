@@ -1,0 +1,16 @@
+# Current version of django
+Django==1.9.2
+
+-r common.txt
+
+# Dev packages
+importmagic==0.1.3
+ipython==4.1.1
+jedi==0.9.0
+pbr==1.8.1
+pep8==1.7.0
+pyflakes==1.0.0
+rope==0.10.3
+virtualenv==14.0.5
+virtualenv-clone==0.2.6
+virtualenvwrapper==4.7.1
