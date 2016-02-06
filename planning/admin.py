@@ -2,7 +2,8 @@ from django.contrib import admin
 from happenings.models import (Tag,
                                Location,
                                Category,
-                               Event)
+                               Event,
+                               Cancellation)
 from happenings.admin import EventAdmin as EventAdminBase
 
 
@@ -19,5 +20,6 @@ admin.site.unregister(Tag)
 admin.site.unregister(Location)
 admin.site.unregister(Category)
 admin.site.unregister(Event)
+admin.site.unregister(Cancellation)
 
 admin.site.register(Event, EventAdmin)
