@@ -12,7 +12,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # 3rd Party Apps
+    'happenings',
+
     # Project Apps
+    'planning'
 ]
 
 MIDDLEWARE_CLASSES = [
