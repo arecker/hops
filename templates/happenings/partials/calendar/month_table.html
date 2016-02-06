@@ -1,0 +1,35 @@
+{% load i18n weekday %}
+<div class="page-header">
+  <h1 class="lead">{{ month_start_date|date:"F" }} <small>{{ month_start_date|date:"Y" }}</small></h1>
+  <nav>
+    <ul class="pagination">
+      <li>
+        <a href="{{ prev_qs }}"><i class="fa fa-arrow-left"></i> Previous</a>
+      </li>
+      <li>
+        <a href="{% url 'calendar:list' %}">Today</a>
+      </li>
+      <li>
+        <a href="{{ next_qs }}"><i class="fa fa-arrow-right"></i> Next</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<table class="table" class="month">
+  {% block week_header_row %}
+  <tr>
+    {% for weekday_num in calendar.iterweekdays %}
+    <th class="{{ weekday_num|weekday_css_class:calendar }}">{% weekday weekday_num full=False %}</th>
+    {% endfor %}
+  </tr>
+  {% endblock week_header_row %}
+  {% block week_rows %}
+  {% for week_row in week_rows %}
+  <tr>
+    {% for formatted_day in week_row %}
+    {{ formatted_day }}
+    {% endfor %}
+  </tr>
+  {% endfor %}
+  {% endblock week_rows %}
+</table>
