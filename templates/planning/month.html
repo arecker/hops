@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load staticfiles happenings_tags %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'happenings/css/calendar.css' %}">
+{% endblock %}
+{% block content %}
+<div id="event-calendar">
+  {{ calendar|safe }}
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{% static 'happenings/js/calendar.js' %}"></script>
+{% endblock %}

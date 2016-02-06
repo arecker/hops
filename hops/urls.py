@@ -5,6 +5,6 @@ from hops.views import HomeView
 
 urlpatterns = [url(r'^admin/', admin.site.urls),
                url(r'^calendar/',
-                   include('happenings.urls',
+                   include('planning.urls',
                            namespace='calendar')),
                url(r'^$', HomeView.as_view(), name='home')]
