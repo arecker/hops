@@ -3,7 +3,7 @@ from happenings.views import (EventMonthView as EventMonthViewBase,
                               EventDayView as EventDayViewBase,
                               EventDetailView as EventDetailViewBase)
 
-from models import HoppyUpdate
+from models import HoppyUpdate, Announcement
 
 
 class MonthView(EventMonthViewBase):
@@ -25,3 +25,12 @@ class HoppyUpdateListView(ListView):
 
 class HoppyUpdateDetailView(DetailView):
     model = HoppyUpdate
+
+
+class AnnouncementListView(ListView):
+    model = Announcement
+    paginate_by = 5
+
+
+class AnnouncementDetailView(DetailView):
+    model = Announcement

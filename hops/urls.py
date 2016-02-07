@@ -4,13 +4,24 @@ from django.conf import settings
 from django.contrib import admin
 
 from hops.views import HomeView
-from planning.views import HoppyUpdateListView, HoppyUpdateDetailView
+from planning.views import (HoppyUpdateListView,
+                            HoppyUpdateDetailView,
+                            AnnouncementListView,
+                            AnnouncementDetailView)
 
 urlpatterns = [url(r'^admin/', admin.site.urls),
 
                url(r'^calendar/',
                    include('planning.urls',
                            namespace='calendar')),
+
+               url(r'^announcements/$',
+                   AnnouncementListView.as_view(),
+                   name='announcement-list'),
+               url(r'^announcements/(?P<slug>[^/]+)/$',
+                   AnnouncementDetailView.as_view(),
+                   name='announcement-detail'),
+
 
                url(r'^hoppy/$',
                    HoppyUpdateListView.as_view(),
