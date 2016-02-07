@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django import forms
 from happenings.models import (Tag,
                                Location,
                                Category,
@@ -6,6 +7,7 @@ from happenings.models import (Tag,
                                Cancellation)
 from happenings.admin import EventAdmin as EventAdminBase
 from sorl.thumbnail.admin import AdminImageMixin
+from pagedown.widgets import AdminPagedownWidget
 
 from planning.models import HoppyUpdate
 
@@ -16,8 +18,17 @@ class EventAdmin(EventAdminBase):
                                     'created_by',)}),)
 
 
+class HoppyUpdateAdminForm(forms.ModelForm):
+    body = forms.CharField(widget=AdminPagedownWidget())
+
+    class Meta:
+        model = HoppyUpdate
+        exclude = ()
+
+
 class HoppyUpdateAdmin(AdminImageMixin, admin.ModelAdmin):
-    pass
+    form = HoppyUpdateAdminForm
+    prepopulated_fields = {'slug': ['title']}
 
 
 admin.site.unregister(Tag)

@@ -15,6 +15,8 @@ INSTALLED_APPS = [
     # 3rd Party Apps
     'happenings',
     'sorl.thumbnail',
+    'pagedown',
+    'markdown_deux',
 
     # Project Apps
     'planning'

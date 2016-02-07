@@ -1,4 +1,4 @@
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from happenings.views import (EventMonthView as EventMonthViewBase,
                               EventDayView as EventDayViewBase,
                               EventDetailView as EventDetailViewBase)
@@ -19,4 +19,9 @@ class EventDetailView(EventDetailViewBase):
 
 
 class HoppyUpdateListView(ListView):
+    model = HoppyUpdate
+    paginate_by = 5
+
+
+class HoppyUpdateDetailView(DetailView):
     model = HoppyUpdate
