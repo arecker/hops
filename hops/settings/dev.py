@@ -44,3 +44,5 @@ LOGGING = {
         },
     }
 }
+
+CURATOR_EMAIL = 'alex@reckerfamily.com'

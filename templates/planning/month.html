@@ -4,6 +4,9 @@
 <link rel="stylesheet" href="{% static 'happenings/css/calendar.css' %}">
 {% endblock %}
 {% block content %}
+<div class="alert alert-info" role="alert">
+  Want to plan an event? <a class="alert-link" href="mailto:{{ CURATOR_EMAIL }}">Send us an email</a>
+</div>
 <div id="event-calendar">
   {{ calendar|safe }}
 </div>

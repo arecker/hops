@@ -1,4 +1,10 @@
 {% extends "base.html" %}
+{% load happenings_tags %}
 {% block content %}
-<h1>Home</h1>
+<div class="page-header">
+  <h1 class="lead">Upcoming Events</h1>
+</div>
+{% upcoming_events %}
+
+
 {% endblock %}
