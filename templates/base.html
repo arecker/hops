@@ -26,6 +26,12 @@
           <ul class="nav navbar-nav">
             <li id="homeLink"><a href="{% url 'home' %}">Home</a></li>
             <li id="calendarLink"><a href="{% url 'calendar:list' %}">Events</a></li>
+            <li id="hoppyLink"><a href="{% url 'hoppy-list' %}">Hoppy</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            {% if user.is_superuser %}
+            <li><a href="{% url 'admin:index' %}">Admin</a></li>
+            {% endif %}
           </ul>
         </div>
       </div>

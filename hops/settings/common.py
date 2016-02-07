@@ -14,6 +14,7 @@ INSTALLED_APPS = [
 
     # 3rd Party Apps
     'happenings',
+    'sorl.thumbnail',
 
     # Project Apps
     'planning'
@@ -58,6 +59,8 @@ USE_L10N = True
 USE_TZ = True
 
 MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+ADMIN_MEDIA_PREFIX = '/media/'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),

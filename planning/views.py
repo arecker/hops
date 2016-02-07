@@ -1,6 +1,9 @@
+from django.views.generic import ListView
 from happenings.views import (EventMonthView as EventMonthViewBase,
                               EventDayView as EventDayViewBase,
                               EventDetailView as EventDetailViewBase)
+
+from models import HoppyUpdate
 
 
 class MonthView(EventMonthViewBase):
@@ -13,3 +16,7 @@ class DayView(EventDayViewBase):
 
 class EventDetailView(EventDetailViewBase):
     template_name = 'planning/event.html'
+
+
+class HoppyUpdateListView(ListView):
+    model = HoppyUpdate
