@@ -3,37 +3,3 @@
 #+OPTIONS: toc:nil num:nil
 
 Official Website of the Hops Museum
-
-* Features
-
-** Planning
-
-   - As a visitor, I would like to be able to view a calendar of upcoming
-     events and contact Erin about hosting my own event.
-   - As a business owner, I would like to be able to update a calendar
-     that guests can see and communicate with them about scheduling
-     their events
-   - As a user, I would like to follow what beloved Hoppy is up to and
-     contact Erin so that I can do cool stuff with her.
-   - As a business owner, I would like to be able to post pictures,
-     videos, and text about what Hoppy is up to so people can hang out
-     with her.
-
-** Sharing
-
-   - As a business owner I would like to be able to make announcement
-     about what the Hops Museum is up to and engage users in Facebook
-     comments so that I can keep my community up to date.
-   - As a business owner, I would like a place where I can showcase
-     pictures and videos from various artists that have been featured
-     at the museum so that I can draw more attention to their work.
-   - As a beer enthusiast, I would like a freely editable curation of
-     beer brewing resources so that I can take my beer education
-     seriously with the help of the community.
-
-** Contributing
-
-   - As a visitor, I would like to be able to donate money to the Hops
-     Museum so that I can show them my appreciation
-   - As a business owner, I would like a place to publicly thank
-     donors so that they can feel appreciated.
