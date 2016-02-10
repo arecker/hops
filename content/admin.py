@@ -14,7 +14,7 @@ from content.models import HoppyUpdate, Announcement, Gallery, GalleryImage
 
 class EventAdmin(EventAdminBase):
     fields = ('start_date', 'end_date', 'all_day', 'repeat',
-              'end_repeat', 'title', 'description')
+              'end_repeat', 'title', 'description', 'created_by')
     fieldsets = None
     inlines = []
 
