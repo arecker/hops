@@ -90,3 +90,7 @@ class BannerAdvertisement(models.Model):
 
     def __unicode__(self):
         return self.image.file.name
+
+    class Meta:
+        verbose_name = 'Banner Ad'
+        verbose_name_plural = 'Banner Ads'
