@@ -23,6 +23,7 @@ class UpdateBase(models.Model):
     class Meta:
         ordering = ('-date', )
         abstract = True
+        get_latest_by = 'date'
 
 
 class HoppyUpdate(UpdateBase):
