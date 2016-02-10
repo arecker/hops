@@ -24,6 +24,11 @@ class HomeView(TemplateView):
         except Announcement.DoesNotExist:
             context['latest_announcement'] = None
 
+        try:
+            context['latest_gallery'] = Gallery.objects.latest()
+        except Gallery.DoesNotExist:
+            context['latest_gallery'] = None
+
         return context
 
 

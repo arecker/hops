@@ -17,4 +17,10 @@
 </div>
 {% include "partials/media.html" with item=latest_hoppy %}
 {% endif %}
+{% if latest_gallery %}
+<div class="page-header">
+  <h1 class="lead">Artists</h1>
+</div>
+{% include "partials/media.html" with item=latest_gallery %}
+{% endif %}
 {% endblock %}
