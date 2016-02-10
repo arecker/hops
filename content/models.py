@@ -72,3 +72,21 @@ class GalleryImage(models.Model):
 
     def __unicode__(self):
         return self.image.file.name
+
+
+class BannerAdvertisementQuerySet(models.QuerySet):
+    def pluck(self):
+        try:
+            return self.order_by('?').first()
+        except self.model.DoesNotExist:
+            return None
+
+
+class BannerAdvertisement(models.Model):
+    objects = BannerAdvertisementQuerySet.as_manager()
+
+    image = ImageField(upload_to='banner_ads')
+    link = models.URLField(blank=True, null=True)
+
+    def __unicode__(self):
+        return self.image.file.name

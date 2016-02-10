@@ -9,7 +9,11 @@ from happenings.admin import EventAdmin as EventAdminBase
 from sorl.thumbnail.admin import AdminImageMixin
 from pagedown.widgets import AdminPagedownWidget
 
-from content.models import HoppyUpdate, Announcement, Gallery, GalleryImage
+from content.models import (HoppyUpdate,
+                            Announcement,
+                            Gallery,
+                            GalleryImage,
+                            BannerAdvertisement)
 
 
 class EventAdmin(EventAdminBase):
@@ -68,6 +72,12 @@ class GalleryAdmin(AdminImageMixin, admin.ModelAdmin):
         exclude = ()
 
 
+class BannerAdvertisementAdmin(AdminImageMixin, admin.ModelAdmin):
+    class Meta:
+        model = BannerAdvertisement
+        exclude = ()
+
+
 admin.site.unregister(Tag)
 admin.site.unregister(Location)
 admin.site.unregister(Category)
@@ -78,3 +88,4 @@ admin.site.register(Event, EventAdmin)
 admin.site.register(HoppyUpdate, HoppyUpdateAdmin)
 admin.site.register(Announcement, AnnouncementAdmin)
 admin.site.register(Gallery, GalleryAdmin)
+admin.site.register(BannerAdvertisement, BannerAdvertisementAdmin)

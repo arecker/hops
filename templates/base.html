@@ -1,4 +1,4 @@
-<!doctype html>{% load staticfiles %}
+<!doctype html>{% load staticfiles thumbnail %}
 <html lang="en">
   <head>
     <meta charset="UTF-8"/>
@@ -20,7 +20,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">THE HOPS MUSEUM</a>
+          <a class="navbar-brand" href="{% url 'home' %}">THE HOPS MUSEUM</a>
         </div>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="nav navbar-nav">
@@ -45,6 +45,25 @@
           {% endblock %}
         </div>
       </div>
+      {% if ad %}
+      <hr/>
+      <div class="row">
+        <div class="text-center" class="col-md-8- col-md-offset-2">
+          <p><small>The Hops Museum would like to thank</small></p>
+          {% if ad.link %}
+          <a href="{{ ad.link }}">
+            {% thumbnail ad.image "700x100" crop="center" as im %}
+            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+            {% endthumbnail %}
+          </a>
+          {% else %}
+          {% thumbnail ad.image "700x100" crop="center" as im %}
+          <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+          {% endthumbnail %}
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
     </div>
     {% block active_link %}
     <input id="activeLink" type="hidden" value="homeLink"/>

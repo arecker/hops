@@ -47,7 +47,8 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
 
                 # Custom processors
-                'hops.processors.settings'
+                'hops.processors.settings',
+                'hops.processors.advertisement'
             ],
         },
     },
