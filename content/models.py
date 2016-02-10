@@ -56,11 +56,14 @@ class Gallery(UpdateBase):
                        upload_to='gallery_covers',
                        verbose_name='Cover Image')
 
+    def get_absolute_url(self):
+        return reverse('gallery-detail',
+                       args=[str(self.slug)])
+
     class Meta:
         verbose_name_plural = 'Galleries'
         ordering = ('-date', )
         get_latest_by = 'date'
-
 
 
 class GalleryImage(models.Model):

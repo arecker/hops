@@ -3,7 +3,9 @@ from happenings.views import (EventMonthView as EventMonthViewBase,
                               EventDayView as EventDayViewBase,
                               EventDetailView as EventDetailViewBase)
 
-from content.models import HoppyUpdate, Announcement
+from content.models import (HoppyUpdate,
+                            Announcement,
+                            Gallery)
 
 
 class HomeView(TemplateView):
@@ -57,3 +59,14 @@ class AnnouncementListView(ListView):
 class AnnouncementDetailView(DetailView):
     model = Announcement
     template_name = 'announcement_detail.html'
+
+
+class GalleryListView(ListView):
+    model = Gallery
+    template_name = 'gallery_list.html'
+    paginate_by = 5
+
+
+class GalleryDetailView(DetailView):
+    model = Gallery
+    template_name = 'gallery_detail.html'

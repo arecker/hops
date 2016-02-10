@@ -18,6 +18,13 @@ urlpatterns = [url(r'^admin/', admin.site.urls),
                    views.AnnouncementDetailView.as_view(),
                    name='announcement-detail'),
 
+               url(r'^gallery/$',
+                   views.GalleryListView.as_view(),
+                   name='gallery-list'),
+               url(r'^gallery/(?P<slug>[^/]+)/$',
+                   views.GalleryDetailView.as_view(),
+                   name='gallery-detail'),
+
 
                url(r'^hoppy/$',
                    views.HoppyUpdateListView.as_view(),

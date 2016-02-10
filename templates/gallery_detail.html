@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load thumbnail markdown_deux_tags %}
+{% block content %}
+<div class="page-header">
+  <h1 class="lead">{{ object.title }} <small>{{ object.date | date }}</small></h1>
+  {% if object.image %}
+  {% thumbnail object.image "300x200" crop="center" as im %}
+  <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+  {% endthumbnail %}
+  {% endif %}
+</div>
+{{ object.body | markdown }}
+<hr/>
+<div class="row">
+  {% for item in object.galleryimage_set.all %}
+  <div class="col-xs-6 col-md-3">
+    <a href="#" class="thumbnail">
+      {% thumbnail item.image "300x200" crop="center" as im %}
+      <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+      {% endthumbnail %}
+    </a>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
+{% block active_link %}
+<input id="activeLink" type="hidden" value="galleryLink"/>
+{% endblock %}
