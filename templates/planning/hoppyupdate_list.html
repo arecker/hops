@@ -7,25 +7,7 @@
   <p><a href="mailto:{{ CURATOR_EMAIL }}">Send us an email</a> if you would like to help us out with a Hoppy appearance</p>
 </div>
 {% for update in object_list %}
-<div class="media">
-  {% if update.image %}
-  <div class="media-left">
-    <a href="{{ update.get_absolute_url }}">
-      {% thumbnail update.image "100x100" crop="center" as im %}
-      <img class="media-object" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
-      {% endthumbnail %}
-    </a>
-  </div>
-  {% endif %}
-  <div class="media-body">
-    <h4 class="media-heading">
-      <a href="{{ update.get_absolute_url }}">
-        {{ update.title }}
-      </a>
-    </h4>
-    <p>{{ update.description }}</p>
-  </div>
-</div>
+{% include 'partials/media.html' with item=update %}
 {% endfor %}
 {% if pager %}
 <hr>

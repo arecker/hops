@@ -1,10 +1,20 @@
 {% extends "base.html" %}
-{% load happenings_tags %}
+{% load happenings_tags thumbnail %}
 {% block content %}
+{% if latest_announcement %}
+<div class="page-header">
+  <h1 class="lead">What's New?</h1>
+</div>
+{% include "partials/media.html" with item=latest_announcement %}
+{% endif %}
 <div class="page-header">
   <h1 class="lead">Upcoming Events</h1>
 </div>
 {% upcoming_events %}
-
-
+{% if latest_hoppy %}
+<div class="page-header">
+  <h1 class="lead">Where's Hoppy?</h1>
+</div>
+{% include "partials/media.html" with item=latest_hoppy %}
+{% endif %}
 {% endblock %}
