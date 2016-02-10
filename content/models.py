@@ -21,9 +21,7 @@ class UpdateBase(models.Model):
         return self.description
 
     class Meta:
-        ordering = ('-date', )
         abstract = True
-        get_latest_by = 'date'
 
 
 class HoppyUpdate(UpdateBase):
@@ -34,6 +32,11 @@ class HoppyUpdate(UpdateBase):
         return reverse('hoppy-detail',
                        args=[str(self.slug)])
 
+    class Meta:
+        verbose_name_plural = 'Hoppy Updates'
+        ordering = ('-date', )
+        get_latest_by = 'date'
+
 
 class Announcement(UpdateBase):
     image = ImageField(blank=True,
@@ -42,3 +45,27 @@ class Announcement(UpdateBase):
     def get_absolute_url(self):
         return reverse('announcement-detail',
                        args=[str(self.slug)])
+
+    class Meta:
+        ordering = ('-date', )
+        get_latest_by = 'date'
+
+
+class Gallery(UpdateBase):
+    image = ImageField(blank=True,
+                       upload_to='gallery_covers',
+                       verbose_name='Cover Image')
+
+    class Meta:
+        verbose_name_plural = 'Galleries'
+        ordering = ('-date', )
+        get_latest_by = 'date'
+
+
+
+class GalleryImage(models.Model):
+    image = ImageField(upload_to='gallery_images')
+    gallery = models.ForeignKey(Gallery)
+
+    def __unicode__(self):
+        return self.image.file.name

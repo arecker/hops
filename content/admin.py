@@ -9,7 +9,7 @@ from happenings.admin import EventAdmin as EventAdminBase
 from sorl.thumbnail.admin import AdminImageMixin
 from pagedown.widgets import AdminPagedownWidget
 
-from content.models import HoppyUpdate, Announcement
+from content.models import HoppyUpdate, Announcement, Gallery, GalleryImage
 
 
 class EventAdmin(EventAdminBase):
@@ -45,6 +45,29 @@ class AnnouncementAdmin(AdminImageMixin, admin.ModelAdmin):
     prepopulated_fields = {'slug': ['title']}
 
 
+class GalleryImageAdmin(AdminImageMixin, admin.TabularInline):
+    model = GalleryImage
+    extra = 1
+
+
+class GalleryForm(forms.ModelForm):
+    body = forms.CharField(widget=AdminPagedownWidget())
+
+    class Meta:
+        model = Gallery
+        exclude = ()
+
+
+class GalleryAdmin(AdminImageMixin, admin.ModelAdmin):
+    form = GalleryForm
+    prepopulated_fields = {'slug': ['title']}
+    inlines = [GalleryImageAdmin]
+
+    class Meta:
+        model = Gallery
+        exclude = ()
+
+
 admin.site.unregister(Tag)
 admin.site.unregister(Location)
 admin.site.unregister(Category)
@@ -54,3 +77,4 @@ admin.site.unregister(Cancellation)
 admin.site.register(Event, EventAdmin)
 admin.site.register(HoppyUpdate, HoppyUpdateAdmin)
 admin.site.register(Announcement, AnnouncementAdmin)
+admin.site.register(Gallery, GalleryAdmin)
