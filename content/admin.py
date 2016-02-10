@@ -13,7 +13,7 @@ from content.models import HoppyUpdate, Announcement
 
 
 class EventAdmin(EventAdminBase):
-    fields = ('start_date', 'end_date', 'all_date', 'repeat',
+    fields = ('start_date', 'end_date', 'all_day', 'repeat',
               'end_repeat', 'title', 'description')
     fieldsets = None
     inlines = []
