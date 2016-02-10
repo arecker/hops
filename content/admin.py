@@ -9,13 +9,14 @@ from happenings.admin import EventAdmin as EventAdminBase
 from sorl.thumbnail.admin import AdminImageMixin
 from pagedown.widgets import AdminPagedownWidget
 
-from planning.models import HoppyUpdate, Announcement
+from content.models import HoppyUpdate, Announcement
 
 
 class EventAdmin(EventAdminBase):
-    fieldsets = ((None, {'fields': ('start_date', 'end_date', 'all_day', 'repeat',
-                                    'end_repeat', 'title', 'description',
-                                    'created_by',)}),)
+    fields = ('start_date', 'end_date', 'all_date', 'repeat',
+              'end_repeat', 'title', 'description')
+    fieldsets = None
+    inlines = []
 
 
 class HoppyUpdateAdminForm(forms.ModelForm):

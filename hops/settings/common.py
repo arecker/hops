@@ -19,7 +19,7 @@ INSTALLED_APPS = [
     'markdown_deux',
 
     # Project Apps
-    'planning'
+    'content'
 ]
 
 MIDDLEWARE_CLASSES = [
