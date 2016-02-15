@@ -1,26 +1,65 @@
 {% extends "base.html" %}
 {% load happenings_tags thumbnail %}
 {% block content %}
-{% if latest_announcement %}
-<div class="page-header">
-  <h1 class="lead">What's New?</h1>
+<hr class="featurette-divider">
+
+<!-- Announcements -->
+<div class="featurette">
+  {% thumbnail latest_announcement.image "500x500" crop="center" as im %}
+  <img class="featurette-image img-circle img-responsive pull-right"
+       src="{{ im.url }}"
+       width="{{ im.width }}"
+       height="{{ im.height }}">
+  {% endthumbnail %}
+  <h2 class="featurette-heading">What's New?
+    <span class="text-muted">Will Catch Your Eye</span>
+  </h2>
+  <h2>{{ latest_announcement.title }}</h2>
+  <p class="lead">{{ latest_announcement.description }}</p>
 </div>
-{% include "partials/media.html" with item=latest_announcement %}
-{% endif %}
-<div class="page-header">
-  <h1 class="lead">Upcoming Events</h1>
+
+<hr class="featurette-divider">
+
+<!-- Events -->
+<div class="featurette" id="services">
+  <img class="featurette-image img-circle img-responsive pull-left" src="http://placehold.it/500x500">
+  <h2 class="featurette-heading">Upcoming Events
+    <!-- <span class="text-muted">Is Pretty Cool Too.</span> -->
+  </h2>
+  {% upcoming_events %}
 </div>
-{% upcoming_events %}
-{% if latest_hoppy %}
-<div class="page-header">
-  <h1 class="lead">Where's Hoppy?</h1>
+
+<hr class="featurette-divider">
+
+<!-- Gallery -->
+<div class="featurette">
+  {% thumbnail latest_gallery.image "500x500" crop="center" as im %}
+  <img class="featurette-image img-circle img-responsive pull-right"
+       src="{{ im.url }}"
+       width="{{ im.width }}"
+       height="{{ im.height }}">
+  {% endthumbnail %}
+  <h2 class="featurette-heading">Latest Gallery
+    <span class="text-muted">Will Catch Your Eye</span>
+  </h2>
+  <h2>{{ latest_gallery.title }}</h2>
+  <p class="lead">{{ latest_gallery.description }}</p>
 </div>
-{% include "partials/media.html" with item=latest_hoppy %}
-{% endif %}
-{% if latest_gallery %}
-<div class="page-header">
-  <h1 class="lead">Artists</h1>
+
+<hr class="featurette-divider">
+
+<div class="featurette" id="contact">
+  {% thumbnail latest_hoppy.image "500x500" crop="center" as im %}
+  <img class="featurette-image img-circle img-responsive pull-right"
+       src="{{ im.url }}"
+       width="{{ im.width }}"
+       height="{{ im.height }}">
+  {% endthumbnail %}
+  <h2 class="featurette-heading">Where's Hoppy?
+    <!-- <span class="text-muted">Will Seal the Deal.</span> -->
+  </h2>
+  <p class="lead">
+    {{ latest_hoppy.description }}
+  </p>
 </div>
-{% include "partials/media.html" with item=latest_gallery %}
-{% endif %}
 {% endblock %}
