@@ -1,3 +1,44 @@
+* {
+  font-family: 'Source Sans Pro', sans-serif !important;
+}
+
 .main {
     margin-bottom: 3em;
+}
+
+.navbar-collapse {
+  background-color: #13250e;
+}
+
+.navbar-brand {
+    background-color: #13250e;
+}
+
+.container-fluid {
+  color: #13250e;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: white;
+}
+
+.navbar-default .navbar-nav > li >
+a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #808080;
+}
+
+#logo {
+  display: block;
+  margin: 0 auto;
+}
+
+p1 {
+  font-size: 180%;
+  color: #330000;
+  width: 1000px;
+  display: block;
+  text-align: center;
+  vertical-align: middle;
+  margin: auto;
+  font-family: 'Handlee', cursive !important;
 }
