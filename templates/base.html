@@ -75,26 +75,34 @@
           {% endblock %}
         </div>
       </div>
-      {% if ad %}
-      <hr/>
+    </div>
+
+    <!-- Footer -->
+    <footer>
       <div class="row">
-        <div class="text-center" class="col-md-8- col-md-offset-2">
-          <p><small>The Hops Museum would like to thank</small></p>
-          {% if ad.link %}
-          <a href="{{ ad.link }}">
+        <div class="col-lg-12">
+          {% if ad %}
+          <div class="text-center" class="col-md-8- col-md-offset-2">
+            <p><small>The Hops Museum would like to thank</small></p>
+            {% if ad.link %}
+            <a href="{{ ad.link }}">
+              {% thumbnail ad.image "700x100" crop="center" as im %}
+              <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+              {% endthumbnail %}
+            </a>
+            {% else %}
             {% thumbnail ad.image "700x100" crop="center" as im %}
             <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
             {% endthumbnail %}
-          </a>
-          {% else %}
-          {% thumbnail ad.image "700x100" crop="center" as im %}
-          <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
-          {% endthumbnail %}
+            {% endif %}
+          </div>
           {% endif %}
+          <br/>
+          <p class="text-center">Copyright &copy; The Hops Museum 2016</p>
         </div>
       </div>
-      {% endif %}
-    </div>
+    </footer>
+
     {% block active_link %}
     <input id="activeLink" type="hidden" value="homeLink"/>
     {% endblock %}
