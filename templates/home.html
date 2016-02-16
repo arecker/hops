@@ -4,15 +4,15 @@
 <hr class="featurette-divider">
 
 <!-- Announcements -->
-<div class="featurette">
-  {% thumbnail latest_announcement.image "500x500" crop="center" as im %}
+<div class="featurette" id="announcements">
+  {% thumbnail latest_announcement.image "300x300" crop="center" as im %}
   <img class="featurette-image img-circle img-responsive pull-right"
        src="{{ im.url }}"
        width="{{ im.width }}"
        height="{{ im.height }}">
   {% endthumbnail %}
-  <h2 class="featurette-heading">What's New?
-    <span class="text-muted">Will Catch Your Eye</span>
+  <h2 class="featurette-heading">What's New? <br>
+    <span class="text-muted">Latest Announcements</span>
   </h2>
   <h2>{{ latest_announcement.title }}</h2>
   <p class="lead">{{ latest_announcement.description }}</p>
@@ -22,7 +22,7 @@
 
 <!-- Events -->
 <div class="featurette" id="services">
-  <img class="featurette-image img-circle img-responsive pull-left" src="http://placehold.it/500x500">
+  <img class="featurette-image img-circle img-responsive pull-left" src="http://placehold.it/300x300">
   <h2 class="featurette-heading">Upcoming Events
     <!-- <span class="text-muted">Is Pretty Cool Too.</span> -->
   </h2>
@@ -32,15 +32,15 @@
 <hr class="featurette-divider">
 
 <!-- Gallery -->
-<div class="featurette">
-  {% thumbnail latest_gallery.image "500x500" crop="center" as im %}
+<div class="featurette" id="gallery">
+  {% thumbnail latest_gallery.image "300x300" crop="center" as im %}
   <img class="featurette-image img-circle img-responsive pull-right"
        src="{{ im.url }}"
        width="{{ im.width }}"
        height="{{ im.height }}">
   {% endthumbnail %}
   <h2 class="featurette-heading">Latest Gallery
-    <span class="text-muted">Will Catch Your Eye</span>
+    <span class="text-muted">Artists and Exhibits at the Hops Museum</span>
   </h2>
   <h2>{{ latest_gallery.title }}</h2>
   <p class="lead">{{ latest_gallery.description }}</p>
@@ -49,7 +49,7 @@
 <hr class="featurette-divider">
 
 <div class="featurette" id="contact">
-  {% thumbnail latest_hoppy.image "500x500" crop="center" as im %}
+  {% thumbnail latest_hoppy.image "300x300" crop="center" as im %}
   <img class="featurette-image img-circle img-responsive pull-left"
        src="{{ im.url }}"
        width="{{ im.width }}"
