@@ -1,6 +1,24 @@
 {% extends "base.html" %}
 {% load happenings_tags thumbnail %}
 {% block content %}
+<hr class="top-divider">
+
+<div id="social">
+  <div id="container">
+     <ul>
+       <a href="https://www.facebook.com/thehopsmuseum/" title="facebook" target="_blank">
+          <i class="fa fa-facebook" id="facebook"></i>
+       </a>
+       <a href="https://twitter.com/thehopsmuseum?lang=en" title="twitter" target="_blank">
+          <i class="fa fa-twitter" id="twitter"></i>
+       </a>
+       <a href="https://www.instagram.com/thehopsmuseum/" title="instagram" target="_blank">
+          <i class="fa fa-instagram" id="instagram"></i>
+       </a>
+     </ul>
+  </div>
+</div>
+
 <hr class="featurette-divider">
 
 <!-- Announcements -->
@@ -12,9 +30,8 @@
        height="{{ im.height }}">
   {% endthumbnail %}
   <h2 class="featurette-heading">What's New? <br>
-    <span class="text-muted">Latest Announcements</span>
   </h2>
-  <h2>{{ latest_announcement.title }}</h2>
+  <h2 class="featurette-title">{{ latest_announcement.title }}</h2>
   <p class="lead">{{ latest_announcement.description }}</p>
 </div>
 
@@ -39,8 +56,7 @@
        width="{{ im.width }}"
        height="{{ im.height }}">
   {% endthumbnail %}
-  <h2 class="featurette-heading">Latest Gallery
-    <span class="text-muted">Artists and Exhibits at the Hops Museum</span>
+  <h2 class="featurette-heading">Latest Artists and Exhibits
   </h2>
   <h2>{{ latest_gallery.title }}</h2>
   <p class="lead">{{ latest_gallery.description }}</p>
