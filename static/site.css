@@ -139,6 +139,55 @@ h2 a:active {
   text-align: right;
 }
 
+h4 a:link {
+  font-size: 20px;
+  background-color: white;
+  color: #330000;
+  font-family: 'Pacifico', cursive;
+}
+
+h4 a:visited {
+  font-size: 20px;
+  background-color: white;
+  color: #330000;
+  font-family: 'Pacifico', cursive;
+}
+
+h4 a:hover {
+  font-size: 20px;
+  background-color: white;
+  color: #174f17;
+  font-family: 'Pacifico', cursive;
+  text-decoration: none;
+}
+
+h4 a:active {
+  font-size: 20px;
+  background-color: white;
+  color: #330000;
+  font-family: 'Pacifico', cursive;
+}
+
+.media-body p {
+  font-size: 20px;
+}
+
 #gallery {
   text-align: right;
+}
+
+.gallery-title {
+  background-color: white;
+}
+
+.hoppy-update {
+  background-color: white;
+}
+
+.map {
+    margin: auto;
+    width: 60%;
+    border: 10px solid #73AD21;
+    border-color: #330000; 
+    padding: 10px;
 }

@@ -1,24 +1,17 @@
 {% load weekday %}
 {% for d, event in upcoming_events %}
-{% with colors=event.get_colors %}
-<div class="media">
-  <div class="media-body">
-    <h4 class="media-heading">
-      <a href="{{ event.get_absolute_url }}">
-        {{ event.title }}
-        {% for c in event.cancellations.all %}
-        {% if c.date == d.date %}
-        (CANCELLED)
-        {% endif %}
-        {% endfor %}
-      </a>
-    </h4>
-    <p>{{ d | date }}</p>
-    <p>{{ event.description }}</p>
+  <div class="media">
+    <div class="media-body">
+      <h4 class="media-heading">
+        <a href="{{ event.get_absolute_url }}">
+          {{ event.title }}
+        </a>
+      </h4>
+      <p>{{ d | date }}</p>
+      <p>{{ event.description }}</p>
+    </div>
   </div>
-</div>
-{% endwith %}
-{% empty %}
+  {% empty %}
 <p>
   No upcoming events.  Check again later!
 </p>

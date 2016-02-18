@@ -62,7 +62,11 @@
   {% endthumbnail %}
   <h2 class="featurette-heading">Latest Artists and Exhibits
   </h2>
-  <h2>{{ latest_gallery.title }}</h2>
+  <h2 class="gallery-title">{{ latest_gallery.title }}
+    <a href="{{ latest_gallery.get_absolute_url }}">
+        {{ latest_gallery.title }}
+    </a>
+  </h2>
   <p class="lead">{{ latest_gallery.description }}</p>
 </div>
 
@@ -79,8 +83,25 @@
     <!-- <span class="text-muted">Will Seal the Deal.</span> -->
   </h2>
   <p class="lead">
+    <h2 class="hoppy-update">
+    <a href="{{ latest_hoppy.get_absolute_url }}">
+        {{ latest_hoppy.title }}
+    </a>
+  </h2>
+    <h3>
     {{ latest_hoppy.description }}
+    </h3>
   </p>
+</div>
+
+<hr class="featurette-divider">
+
+<div class="map">
+  <!-- 4:3 aspect ratio -->
+  <div class="embed-responsive embed-responsive-4by3">
+    <iframe class="embed-responsive-item" src="..."></iframe>
+    <iframe src="https://www.google.com/maps/d/embed?mid=ztYBxGvZkT60.kkLHYU9sNWcI&hl=en" width="640" height="480"></iframe>
+  </div>
 </div>
 
 {% endblock %}
