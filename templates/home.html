@@ -31,7 +31,11 @@
   {% endthumbnail %}
   <h2 class="featurette-heading">What's New? <br>
   </h2>
-  <h2 class="featurette-title">{{ latest_announcement.title }}</h2>
+  <h2 class="featurette-title">
+    <a href="{{ latest_announcement.get_absolute_url }}">
+        {{ latest_announcement.title }}
+    </a>
+  </h2>
   <p class="lead">{{ latest_announcement.description }}</p>
 </div>
 
@@ -39,7 +43,7 @@
 
 <!-- Events -->
 <div class="featurette" id="services">
-  <img class="featurette-image img-circle img-responsive pull-left" src="http://placehold.it/300x300">
+  <img class="featurette-image img-circle img-responsive pull-left" src="http://i.imgur.com/0hdcpjt.jpg?1" style="width:300px;height:300px;">
   <h2 class="featurette-heading">Upcoming Events
     <!-- <span class="text-muted">Is Pretty Cool Too.</span> -->
   </h2>

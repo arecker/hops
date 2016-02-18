@@ -104,6 +104,29 @@ h2 {
 
 .featurette-title {
   background-color: white;
+}
+
+h2 a:link {
+  background-color: white;
+  color: #330000;
+  font-family: 'Pacifico', cursive;
+}
+
+h2 a:visited {
+  background-color: white;
+  color: #330000;
+  font-family: 'Pacifico', cursive;
+}
+
+h2 a:hover {
+  background-color: white;
+  color: #174f17;
+  font-family: 'Pacifico', cursive;
+  text-decoration: none;
+}
+
+h2 a:active {
+  background-color: white;
   color: #330000;
   font-family: 'Pacifico', cursive;
 }
