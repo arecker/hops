@@ -104,3 +104,7 @@ class SearchView(View):
         context = search(term)
 
         return render_to_response(self.template_name, RequestContext(request, context))
+
+
+class GiveView(TemplateView):
+    template_name = 'give.html'

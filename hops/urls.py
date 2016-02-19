@@ -37,6 +37,10 @@ urlpatterns = [url(r'^admin/', admin.site.urls),
                    views.NewspaperArchiveListView.as_view(),
                    name='newspaper-list'),
 
+               url(r'^give/$',
+                   views.GiveView.as_view(),
+                   name='give'),
+
                url(r'^search/$', views.SearchView.as_view(), name='search'),
 
                url(r'^$', views.HomeView.as_view(), name='home')]
