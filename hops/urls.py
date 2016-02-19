@@ -37,6 +37,8 @@ urlpatterns = [url(r'^admin/', admin.site.urls),
                    views.NewspaperArchiveListView.as_view(),
                    name='newspaper-list'),
 
+               url(r'^search/$', views.SearchView.as_view(), name='search'),
+
                url(r'^$', views.HomeView.as_view(), name='home')]
 
 # only active in development

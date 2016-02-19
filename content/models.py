@@ -1,12 +1,32 @@
 from uuid import uuid4
 
 from django.db import models
+from django.db.models import Q
 from django.core.urlresolvers import reverse
 from django.utils import timezone
 from sorl.thumbnail import ImageField
 
 
+def search(term):
+    results = {}
+
+    for k, m in [('announcements', Announcement),
+                 ('hoppies', HoppyUpdate),
+                 ('galleries', Gallery)]:
+        results[k] = m.objects.filter_by_searchable_fields(term)
+
+    return results
+
+
+class UpdateBaseQueryset(models.QuerySet):
+    def filter_by_searchable_fields(self, term):
+        return self.filter(Q(title__contains=term) |
+                           Q(description__contains=term))
+
+
 class UpdateBase(models.Model):
+    objects = UpdateBaseQueryset.as_manager()
+
     id = models.UUIDField(primary_key=True,
                           default=uuid4,
                           unique=True,

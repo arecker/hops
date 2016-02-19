@@ -1,4 +1,8 @@
-from django.views.generic import TemplateView, ListView, DetailView
+from django.views.generic import (TemplateView,
+                                  ListView,
+                                  DetailView,
+                                  View)
+from django.shortcuts import render, render_to_response, RequestContext
 from happenings.views import (EventMonthView as EventMonthViewBase,
                               EventDayView as EventDayViewBase,
                               EventDetailView as EventDetailViewBase)
@@ -6,7 +10,8 @@ from happenings.views import (EventMonthView as EventMonthViewBase,
 from content.models import (HoppyUpdate,
                             Announcement,
                             Gallery,
-                            NewspaperArchive)
+                            NewspaperArchive,
+                            search)
 
 
 class HomeView(TemplateView):
@@ -82,3 +87,20 @@ class NewspaperArchiveListView(ListView):
     model = NewspaperArchive
     template_name = 'newspaper_list.html'
     paginate_by = 5
+
+
+class SearchView(View):
+    template_name = 'search.html'
+
+    def get(self, request):
+        return render(request, self.template_name)
+
+    def post(self, request):
+        term = request.POST.get('term', None)
+
+        if not term:
+            return self.get(request)
+
+        context = search(term)
+
+        return render_to_response(self.template_name, RequestContext(request, context))
