@@ -2,12 +2,34 @@
 {% load thumbnail %}
 {% block content %}
 <div class="page-header">
-  <h1 class="lead">Artists</h1>
+  <h1 class="lead" id="artists">Artists</h1>
 </div>
-{% for update in object_list %}
+
+<div class="row">
+  {% for item in object_list %}
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <a href="{{ item.get_absolute_url }}">
+        {% thumbnail item.image "300x300" crop="center" as im %}
+        <img class="" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+        {% endthumbnail %}
+      </a>
+      <div class="caption">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+
+<!-- {% for update in object_list %}
 {% include 'partials/media.html' with item=update %}
 {% endfor %}
-{% if pager %}
+{% if pager %} -->
+
+
 <hr>
 <ul class="pager">
   {% if page_obj.has_previous %}
