@@ -1,6 +1,16 @@
 {% extends "base.html" %} {% load thumbnail %} {% block content %}
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="alert alert-success" role="alert">
+      <i class="fa fa-newspaper-o"></i> Did you know we have a newspaper? &nbsp;
+      <a href="{% url 'newspaper-list' %}" class="alert-link">View the archives here!</a>
+    </div>
+  </div>
+</div>
+
 <div class="page-header">
-  <h1 class="lead">Announcements <small>See what we are up to</small></h1>
+  <h1 class="lead"> Announcements </h1>
 </div>
 <div class="container">
   <div class="row">

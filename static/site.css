@@ -188,3 +188,14 @@ h4 a:active {
     border: 10px solid #73AD21;
     border-color: #330000;
 }
+
+.page-header .lead {
+  font-size: 35px;
+  background-color: #174f17;
+  color: white;
+  padding-left: 10px;
+}
+
+.alert {
+  text-align: center;
+}
