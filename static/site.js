@@ -6,6 +6,11 @@ function updateNavbar() {
     $(activeLink).addClass('active');
 }
 
+function initBigImages() {
+    $('.big-image').abigimage();
+}
+
 $(document).ready(function() {
     updateNavbar();
+    initBigImages();
 });
