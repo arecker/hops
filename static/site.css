@@ -186,7 +186,7 @@ h4 a:active {
 
 .map {
     border: 10px solid #73AD21;
-    border-color: #330000;
+    border-color: #13250e;
 }
 
 .page-header .lead {
@@ -198,4 +198,18 @@ h4 a:active {
 
 .alert {
   text-align: center;
+}
+
+.lead {
+  font-size: 35px;
+}
+
+.detail {
+  font-size: 25px;
+  color: #330000;
+  font-family: 'Pacifico', cursive;
+}
+
+.body {
+  font-size: 20px;
 }
