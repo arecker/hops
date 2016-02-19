@@ -3,7 +3,7 @@
   <div class="media-left">
     <a href="{{ item.get_absolute_url }}">
       {% thumbnail item.image "100x100" crop="center" as im %}
-      <img class="media-object" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+      <img class="media-object img-circle" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
       {% endthumbnail %}
     </a>
   </div>

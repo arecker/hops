@@ -15,7 +15,8 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      {% for update in object_list %} {% include 'partials/media.html' with item=update %} {% endfor %} {% if pager %}
+      {% for update in object_list %}
+      {% include 'partials/media.html' with item=update %} {% endfor %} {% if pager %}
       <hr>
       <ul class="pager">
         {% if page_obj.has_previous %}
