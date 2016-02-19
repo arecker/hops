@@ -5,7 +5,8 @@ from happenings.views import (EventMonthView as EventMonthViewBase,
 
 from content.models import (HoppyUpdate,
                             Announcement,
-                            Gallery)
+                            Gallery,
+                            NewspaperArchive)
 
 
 class HomeView(TemplateView):
@@ -75,3 +76,9 @@ class GalleryListView(ListView):
 class GalleryDetailView(DetailView):
     model = Gallery
     template_name = 'gallery_detail.html'
+
+
+class NewspaperArchiveListView(ListView):
+    model = NewspaperArchive
+    template_name = 'newspaper_list.html'
+    paginate_by = 5

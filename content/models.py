@@ -2,6 +2,7 @@ from uuid import uuid4
 
 from django.db import models
 from django.core.urlresolvers import reverse
+from django.utils import timezone
 from sorl.thumbnail import ImageField
 
 
@@ -94,3 +95,17 @@ class BannerAdvertisement(models.Model):
     class Meta:
         verbose_name = 'Banner Ad'
         verbose_name_plural = 'Banner Ads'
+
+
+class NewspaperArchive(models.Model):
+    title = models.CharField(max_length=120)
+    slug = models.SlugField(unique=True)
+    date = models.DateField(default=timezone.now)
+    file = models.FileField(upload_to='newspapers')
+
+    def __unicode__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Newspaper Archive'
+        ordering = ('-date', )

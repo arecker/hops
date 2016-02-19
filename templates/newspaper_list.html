@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="page-header">
+        <h1 class="lead">The Hops Museum Newspaper</h1>
+      </div>
+      <ul>
+        {% for archive in object_list %}
+        <li>
+          <a href="{{ archive.file.url }}">
+            {{ archive.title }} ({{ archive.date | date }})
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% if pager %}
+      <hr>
+      <ul class="pager">
+        {% if page_obj.has_previous %}
+        <li class="previous">
+          <a href="{% url 'newspaper-list' %}?page={{ page_obj.previous_page_number }}">Previous</a>
+        </li>
+        {% endif %} {% if page_obj.has_next %}
+        <li class="next">
+          <a href="{% url 'newspaper-list' %}?page={{ page_obj.next_page_number }}">Next</a>
+        </li>
+        {% endif %}
+      </ul>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block active_link %}
+<input id="activeLink" type="hidden" value="announcementLink" /> {% endblock %}

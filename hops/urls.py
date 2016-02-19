@@ -33,6 +33,10 @@ urlpatterns = [url(r'^admin/', admin.site.urls),
                    views.HoppyUpdateDetailView.as_view(),
                    name='hoppy-detail'),
 
+               url(r'^newspaper/$',
+                   views.NewspaperArchiveListView.as_view(),
+                   name='newspaper-list'),
+
                url(r'^$', views.HomeView.as_view(), name='home')]
 
 # only active in development

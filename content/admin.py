@@ -13,7 +13,8 @@ from content.models import (HoppyUpdate,
                             Announcement,
                             Gallery,
                             GalleryImage,
-                            BannerAdvertisement)
+                            BannerAdvertisement,
+                            NewspaperArchive)
 
 
 class EventAdmin(EventAdminBase):
@@ -78,6 +79,14 @@ class BannerAdvertisementAdmin(AdminImageMixin, admin.ModelAdmin):
         exclude = ()
 
 
+class NewspaperArchiveAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ['title']}
+
+    class Meta:
+        model = NewspaperArchive
+        exclude = ()
+
+
 admin.site.unregister(Tag)
 admin.site.unregister(Location)
 admin.site.unregister(Category)
@@ -89,3 +98,4 @@ admin.site.register(HoppyUpdate, HoppyUpdateAdmin)
 admin.site.register(Announcement, AnnouncementAdmin)
 admin.site.register(Gallery, GalleryAdmin)
 admin.site.register(BannerAdvertisement, BannerAdvertisementAdmin)
+admin.site.register(NewspaperArchive, NewspaperArchiveAdmin)
