@@ -121,6 +121,7 @@ class NewspaperArchive(models.Model):
     title = models.CharField(max_length=120)
     slug = models.SlugField(unique=True)
     date = models.DateField(default=timezone.now)
+    description = models.TextField(blank=True, null=True)
     file = models.FileField(upload_to='newspapers')
 
     def __unicode__(self):

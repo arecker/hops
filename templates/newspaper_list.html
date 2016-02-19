@@ -4,17 +4,21 @@
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <div class="page-header">
-        <h1 class="lead">The Hops Museum Newspaper</h1>
+        <h1 class="lead">Our Newspaper</h1>
       </div>
-      <ul>
+
+      <div class="list-group">
         {% for archive in object_list %}
-        <li>
-          <a href="{{ archive.file.url }}">
-            {{ archive.title }} ({{ archive.date | date }})
-          </a>
-        </li>
-        {% endfor %}
-      </ul>
+        <a href="{{ archive.file.url }}" class="list-group-item">
+          <h4 class="list-group-item-heading">  {{ archive.title }} ({{ archive.date | date }})</h4>
+          {% if archive.description %}
+          <p class="list-group-item-text">{{ archive.description }}</p>
+          {% endif %}
+        </a>
+          {% endfor %}
+      </div>
+
+
       {% if pager %}
       <hr>
       <ul class="pager">
