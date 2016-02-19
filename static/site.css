@@ -185,9 +185,6 @@ h4 a:active {
 }
 
 .map {
-    margin: auto;
-    width: 60%;
     border: 10px solid #73AD21;
-    border-color: #330000; 
-    padding: 10px;
+    border-color: #330000;
 }

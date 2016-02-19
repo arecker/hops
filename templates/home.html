@@ -1,21 +1,19 @@
-{% extends "base.html" %}
-{% load happenings_tags thumbnail %}
-{% block content %}
+{% extends "base.html" %} {% load happenings_tags thumbnail %} {% block content %}
 <hr class="top-divider">
 
 <div id="social">
   <div id="container">
-     <ul>
-       <a href="https://www.facebook.com/thehopsmuseum/" title="facebook" target="_blank">
-          <i class="fa fa-facebook" id="facebook"></i>
-       </a>
-       <a href="https://twitter.com/thehopsmuseum?lang=en" title="twitter" target="_blank">
-          <i class="fa fa-twitter" id="twitter"></i>
-       </a>
-       <a href="https://www.instagram.com/thehopsmuseum/" title="instagram" target="_blank">
-          <i class="fa fa-instagram" id="instagram"></i>
-       </a>
-     </ul>
+    <ul>
+      <a href="https://www.facebook.com/thehopsmuseum/" title="facebook" target="_blank">
+        <i class="fa fa-facebook" id="facebook"></i>
+      </a>
+      <a href="https://twitter.com/thehopsmuseum?lang=en" title="twitter" target="_blank">
+        <i class="fa fa-twitter" id="twitter"></i>
+      </a>
+      <a href="https://www.instagram.com/thehopsmuseum/" title="instagram" target="_blank">
+        <i class="fa fa-instagram" id="instagram"></i>
+      </a>
+    </ul>
   </div>
 </div>
 
@@ -24,11 +22,7 @@
 <!-- Announcements -->
 <div class="featurette" id="announcements">
   {% thumbnail latest_announcement.image "300x300" crop="center" as im %}
-  <img class="featurette-image img-circle img-responsive pull-right"
-       src="{{ im.url }}"
-       width="{{ im.width }}"
-       height="{{ im.height }}">
-  {% endthumbnail %}
+  <img class="featurette-image img-circle img-responsive pull-right" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"> {% endthumbnail %}
   <h2 class="featurette-heading">What's New? <br>
   </h2>
   <h2 class="featurette-title">
@@ -46,8 +40,7 @@
   <img class="featurette-image img-circle img-responsive pull-left" src="http://i.imgur.com/0hdcpjt.jpg?1" style="width:300px;height:300px;">
   <h2 class="featurette-heading">Upcoming Events
     <!-- <span class="text-muted">Is Pretty Cool Too.</span> -->
-  </h2>
-  {% upcoming_events %}
+  </h2> {% upcoming_events %}
 </div>
 
 <hr class="featurette-divider">
@@ -55,11 +48,7 @@
 <!-- Gallery -->
 <div class="featurette" id="gallery">
   {% thumbnail latest_gallery.image "300x300" crop="center" as im %}
-  <img class="featurette-image img-circle img-responsive pull-right"
-       src="{{ im.url }}"
-       width="{{ im.width }}"
-       height="{{ im.height }}">
-  {% endthumbnail %}
+  <img class="featurette-image img-circle img-responsive pull-right" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"> {% endthumbnail %}
   <h2 class="featurette-heading">Latest Artists and Exhibits
   </h2>
   <h2 class="gallery-title">{{ latest_gallery.title }}
@@ -74,11 +63,7 @@
 
 <div class="featurette" id="contact">
   {% thumbnail latest_hoppy.image "300x300" crop="center" as im %}
-  <img class="featurette-image img-circle img-responsive pull-left"
-       src="{{ im.url }}"
-       width="{{ im.width }}"
-       height="{{ im.height }}">
-  {% endthumbnail %}
+  <img class="featurette-image img-circle img-responsive pull-left" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"> {% endthumbnail %}
   <h2 class="featurette-heading">Where's Hoppy?
     <!-- <span class="text-muted">Will Seal the Deal.</span> -->
   </h2>
@@ -96,11 +81,11 @@
 
 <hr class="featurette-divider">
 
-<div class="map">
-  <!-- 4:3 aspect ratio -->
-  <div class="embed-responsive embed-responsive-4by3">
-    <iframe class="embed-responsive-item" src="..."></iframe>
-    <iframe src="https://www.google.com/maps/d/embed?mid=ztYBxGvZkT60.kkLHYU9sNWcI&hl=en" width="640" height="480"></iframe>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="embed-responsive embed-responsive-4by3 map">
+      <iframe class="embed-responsive-item" src="https://www.google.com/maps/d/embed?mid=ztYBxGvZkT60.kkLHYU9sNWcI&hl=en"></iframe>
+    </div>
   </div>
 </div>
 
