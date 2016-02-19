@@ -11,6 +11,11 @@ DATABASES = {
     }
 }
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'temp/uploads')
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
 AUTH_PASSWORD_VALIDATORS = []
 
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
