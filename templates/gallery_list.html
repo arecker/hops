@@ -15,8 +15,11 @@
         {% endthumbnail %}
       </a>
       <div class="caption">
-        <h3>{{ item.title }}</h3>
+        <h3 class="artist_title">{{ item.title }}</h3>
+      <div class="artist_content">
+        <p>{{ item.date }}</p>
         <p>{{ item.description }}</p>
+      </div>  
       </div>
     </div>
   </div>
@@ -24,12 +27,8 @@
 </div>
 
 
-<!-- {% for update in object_list %}
-{% include 'partials/media.html' with item=update %}
-{% endfor %}
-{% if pager %} -->
 
-
+{% if pager %}
 <hr>
 <ul class="pager">
   {% if page_obj.has_previous %}

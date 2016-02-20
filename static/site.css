@@ -215,10 +215,15 @@ h4 a:active {
   font-size: 40px;
 }
 
-.caption {
-  color: red;
+footer .img-responsive {
+  margin: 0 auto;
 }
 
-footer .img-responsive {
-    margin: 0 auto;
+.artist_title {
+  color: #330000;
+  font-family: 'Pacifico', cursive;
+}
+
+.artist_content {
+  font-size: 15px;
 }
