@@ -218,3 +218,7 @@ h4 a:active {
 .caption {
   color: red;
 }
+
+footer .img-responsive {
+    margin: 0 auto;
+}

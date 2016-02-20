@@ -92,19 +92,18 @@
     <!-- Footer -->
     <footer>
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12 text-center">
           {% if ad %}
-          <div class="text-center" class="col-md-8- col-md-offset-2">
-            <p><small>The Hops Museum would like to thank:</small></p>
+          <p><small>The Hops Museum would like to thank:</small></p>
             {% if ad.link %}
             <a href="{{ ad.link }}">
               {% thumbnail ad.image "700x100" crop="center" as im %}
-              <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+              <img src="{{ im.url }}" class="img-responsive">
               {% endthumbnail %}
             </a>
             {% else %}
             {% thumbnail ad.image "700x100" crop="center" as im %}
-            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+            <img class="img-responsive" src="{{ im.url }}" class="img-responsive">
             {% endthumbnail %}
             {% endif %}
           </div>
