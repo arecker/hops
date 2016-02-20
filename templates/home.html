@@ -70,9 +70,7 @@
 <div class="featurette" id="contact">
   {% thumbnail latest_hoppy.image "300x300" crop="center" as im %}
   <img class="featurette-image img-circle img-responsive pull-left" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"> {% endthumbnail %}
-  <h2 class="featurette-heading">Where's Hoppy?
-    <!-- <span class="text-muted">Will Seal the Deal.</span> -->
-  </h2>
+  <h2 class="featurette-heading">Where's Hoppy?</h2>
   <p class="lead">
     <h2 class="hoppy-update">
     <a href="{{ latest_hoppy.get_absolute_url }}">

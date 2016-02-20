@@ -39,10 +39,7 @@ a:hover, .navbar-default .navbar-nav > li > a:focus {
 .statement {
   font-size: 180%;
   color: #330000;
-  width: 1000px;
   display: block;
-  text-align: center;
-  vertical-align: middle;
   margin: auto;
   font-family: 'Pacifico', cursive !important;
 }
