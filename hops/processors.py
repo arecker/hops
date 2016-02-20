@@ -4,7 +4,8 @@ from content.models import BannerAdvertisement
 
 
 def settings(request):
-    return {'CURATOR_EMAIL': django_settings.CURATOR_EMAIL}
+    return {'CURATOR_EMAIL': django_settings.CURATOR_EMAIL,
+            'DEBUG': django_settings.DEBUG}
 
 
 def advertisement(request):

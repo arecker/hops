@@ -13,6 +13,8 @@
         <p>{{ object.description }}</p>
         <p>Start: {{ object.start | date:"M d P" }}</p>
         <p>Start: {{ object.end | date:"M d P" }}</p>
+        {% include "partials/share_facebook.html" %}
+        {% include "partials/share_twitter.html" %}
       </div>
     </div>
   </div>
