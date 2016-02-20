@@ -44,6 +44,34 @@ a:hover, .navbar-default .navbar-nav > li > a:focus {
   font-family: 'Pacifico', cursive;
 }
 
+/* Social Buttons */
+.social a:hover {
+    opacity: .7;
+}
+
+.social a {
+    text-decoration: none;
+}
+
+.social .fa {
+    border-radius: 50%;
+}
+
+.social .fa-facebook {
+    background: #3b5998;
+    color: #fff;
+}
+
+.social .fa-twitter {
+    background: #00aced;
+    color: #fff;
+}
+
+.social .fa-instagram {
+    background: #666666;
+    color: #fff;
+}
+
 .featurette-divider {
   margin-top: 0px;
 }
@@ -169,7 +197,6 @@ footer .img-responsive {
 .artist_content {
   font-size: 15px;
 }
-
 
 /* Social Buttons */
 .social a:hover {

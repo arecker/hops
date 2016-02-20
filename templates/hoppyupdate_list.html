@@ -1,14 +1,19 @@
 {% extends "base.html" %}
-{% load thumbnail %}
+{% load thumbnail staticfiles %}
 {% block content %}
-<div class="jumbotron">
-  <h1>Meet Hoppy</h1>
-  <p>The lovable hoppy mascot of the Hops Museum</p>
-  <p><a href="mailto:{{ CURATOR_EMAIL }}">Send us an email</a> if you would like to help us out with a Hoppy appearance</p>
+
+<hr class="featurette-divider">
+
+<div class="featurette" id="hoppyupdate_detail">
+  <img class="featurette-image img-circle img-responsive pull-left" src="{% static 'cowboyhoppy.png' %}" />
+  <h2 class="lead"> Who is Hoppy?</h2>
+  <p class="body"> Hopy is our mascot! Omittam nominavi an vim, docendi alienum ad duo, ne possit graecis molestie sed. Agam graecis salutandi eu eos. Movet accusamus mel id, erant fabulas percipit vel eu. Percipit imperdiet evertitur mea te, justo posse adipiscing vis ea. Movet primis scriptorem et vel, no omittantur adversarium mel, ad cum animal voluptaria adipiscing. At labores propriae mediocritatem ius. Eu tation placerat iracundia nec, pri id nibh eleifend.</p>
 </div>
+
 {% for update in object_list %}
 {% include 'partials/media.html' with item=update %}
 {% endfor %}
+
 {% if pager %}
 <hr>
 <ul class="pager">
