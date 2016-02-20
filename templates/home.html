@@ -30,64 +30,71 @@
 <!-- Announcements -->
 <div class="featurette" id="announcements">
   {% thumbnail latest_announcement.image "300x300" crop="center" as im %}
-  <img class="featurette-image img-circle img-responsive pull-right" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"> {% endthumbnail %}
-  <h2 class="featurette-heading">What's New? <br>
-  </h2>
-  <h2 class="featurette-title">
-    <a href="{{ latest_announcement.get_absolute_url }}">
-        {{ latest_announcement.title }}
-    </a>
-  </h2>
-  <p class="lead">{{ latest_announcement.description }}</p>
+  <img class="featurette-image img-circle img-responsive pull-right" src="{{ im.url }}">
+  {% endthumbnail %}
+  <h2 class="featurette-heading text-right">What's New?</h2>
+  <div class="media text-right">
+    <div class="media-body">
+      <a href="{{ latest_announcement.get_absolute_url }}">
+        <h4 class="media-heading">{{ latest_announcement.title }}</h4>
+      </a>
+      <p class="lead">{{ latest_announcement.description }}</p>
+    </div>
+  </div>
 </div>
 
 <hr class="featurette-divider">
 
 <!-- Events -->
 <div class="featurette" id="services">
-  <img class="featurette-image img-circle img-responsive pull-left" src="http://i.imgur.com/0hdcpjt.jpg?1" style="width:300px;height:300px;">
+  <img class="featurette-image img-circle img-responsive pull-left" src="http://i.imgur.com/0hdcpjt.jpg?1">
   <h2 class="featurette-heading">Upcoming Events</h2>
   {% for event in latest_events %}
-  <h2 class="event-title">{{ event.title }}
-    <a href="{{ event.get_absolute_url }}">
-      {{ event.title }}
-    </a>
-  </h2>
+  <div class="media">
+    <div class="media-body">
+      <a href="{{ event.get_absolute_url }}">
+        <h4 class="media-heading">{{ event.title }}</h4>
+      </a>
+      <p>{{ event.description }}</p>
+    </div>
+  </div>
   {% endfor %}
 </div>
 
 <hr class="featurette-divider">
 
 <!-- Gallery -->
-<div class="featurette" id="gallery">
+<div class="featurette" id="announcements">
   {% thumbnail latest_gallery.image "300x300" crop="center" as im %}
-  <img class="featurette-image img-circle img-responsive pull-right" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"> {% endthumbnail %}
-  <h2 class="featurette-heading">Latest Artists and Exhibits
-  </h2>
-  <h2 class="gallery-title">{{ latest_gallery.title }}
-    <a href="{{ latest_gallery.get_absolute_url }}">
-        {{ latest_gallery.title }}
-    </a>
-  </h2>
-  <p class="lead">{{ latest_gallery.description }}</p>
+  <img class="featurette-image img-circle img-responsive pull-right" src="{{ im.url }}">
+  {% endthumbnail %}
+  <h2 class="featurette-heading text-right">Latest Artists and Exhibits</h2>
+  <div class="media text-right">
+    <div class="media-body">
+      <a href="{{ latest_gallery.get_absolute_url }}">
+        <h4 class="media-heading">{{ latest_gallery.title }}</h4>
+      </a>
+      <p class="lead">{{ latest_gallery.description }}</p>
+    </div>
+  </div>
 </div>
 
 <hr class="featurette-divider">
 
-<div class="featurette" id="contact">
+<!-- Gallery -->
+<div class="featurette">
   {% thumbnail latest_hoppy.image "300x300" crop="center" as im %}
-  <img class="featurette-image img-circle img-responsive pull-left" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"> {% endthumbnail %}
-  <h2 class="featurette-heading">Where's Hoppy?</h2>
-  <p class="lead">
-    <h2 class="hoppy-update">
-    <a href="{{ latest_hoppy.get_absolute_url }}">
-        {{ latest_hoppy.title }}
-    </a>
-  </h2>
-    <h3>
-    {{ latest_hoppy.description }}
-    </h3>
-  </p>
+  <img class="featurette-image img-circle img-responsive pull-left" src="{{ im.url }}">
+  {% endthumbnail %}
+  <h2 class="featurette-heading text-left">Where's Hoppy?</h2>
+  <div class="media">
+    <div class="media-body">
+      <a href="{{ latest_hoppy.get_absolute_url }}">
+        <h4 class="media-heading">{{ latest_hoppy.title }}</h4>
+      </a>
+      <p class="lead">{{ latest_hoppy.description }}</p>
+    </div>
+  </div>
 </div>
 
 <hr class="featurette-divider">

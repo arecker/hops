@@ -41,7 +41,7 @@ a:hover, .navbar-default .navbar-nav > li > a:focus {
   color: #330000;
   display: block;
   margin: auto;
-  font-family: 'Pacifico', cursive !important;
+  font-family: 'Pacifico', cursive;
 }
 
 .featurette-divider {
@@ -82,14 +82,6 @@ h2 a:active {
   font-family: 'Pacifico', cursive;
 }
 
-.featurette-heading {
-  font-size: 350%;
-}
-
-#announcements {
-  text-align: right;
-}
-
 h4 a:link {
   font-size: 20px;
   background-color: white;
@@ -121,10 +113,6 @@ h4 a:active {
 
 .media-body p {
   font-size: 20px;
-}
-
-#gallery {
-  text-align: right;
 }
 
 .gallery-title {
@@ -163,10 +151,6 @@ h4 a:active {
 
 .body {
   font-size: 20px;
-}
-
-#artists {
-  font-size: 40px;
 }
 
 footer .img-responsive {
@@ -213,4 +197,16 @@ footer .img-responsive {
 .social .fa-instagram {
     background: #666666;
     color: #fff;
+}
+
+/* Homepage Featurettes */
+.featurette-heading {
+    background-color: #174f17;
+    color: white;
+    padding: 10px;
+}
+
+.featurette .media-heading {
+    color: #330000;
+    font-family: 'Pacifico', cursive;
 }
