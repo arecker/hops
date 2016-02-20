@@ -48,52 +48,6 @@ a:hover, .navbar-default .navbar-nav > li > a:focus {
   margin-top: 0px;
 }
 
-
-#social #container {
-  text-align: center;
-  font-size: 30px;
-}
-
-#facebook {
-  background: #3b5998;
-  color: #fff;
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
-  font-size: 35px;
-  text-align: center;
-  margin-right: 10px;
-  transition: all 0.2s ease-in-out;
-}
-
-#twitter {
-  background: #00aced;
-  color: #fff;
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
-  font-size: 35px;
-  text-align: center;
-  margin-right: 10px;
-  transition: all 0.2s ease-in-out;
-}
-
-#instagram {
-  background: #666666;
-  color: #fff;
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
-  font-size: 35px;
-  text-align: center;
-  margin-right: 10px;
-  transition: all 0.2s ease-in-out;
-}
-
-ul a i:hover {
-    opacity: .7;
-}
-
 h2 {
   background-color: #174f17;
   color: white;
@@ -230,4 +184,33 @@ footer .img-responsive {
 
 .artist_content {
   font-size: 15px;
+}
+
+
+/* Social Buttons */
+.social a:hover {
+    opacity: .7;
+}
+
+.social a {
+    text-decoration: none;
+}
+
+.social .fa {
+    border-radius: 50%;
+}
+
+.social .fa-facebook {
+    background: #3b5998;
+    color: #fff;
+}
+
+.social .fa-twitter {
+    background: #00aced;
+    color: #fff;
+}
+
+.social .fa-instagram {
+    background: #666666;
+    color: #fff;
 }
