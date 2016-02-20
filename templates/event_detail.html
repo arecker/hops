@@ -1,25 +1,20 @@
-{% extends "base.html" %}{% load thumbnail %}
-{% block content %}
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <div class="page-header">
-        <h1 class="lead">{{ object.title }} <small>{{ object.start | date }}</small></h1>
-        {% if object.image %}
-        {% thumbnail object.image "300x200" crop="center" as im %}
-        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
-        {% endthumbnail %}
-        {% endif %}
-        <p>{{ object.description }}</p>
-        <p>Start: {{ object.start | date:"M d P" }}</p>
-        <p>Start: {{ object.end | date:"M d P" }}</p>
-        {% include "partials/share_facebook.html" %}
-        {% include "partials/share_twitter.html" %}
-      </div>
-    </div>
-  </div>
+{% extends "base.html" %}{% load thumbnail %} {% block content %}
+
+<hr class="featurette-divider">
+
+<div class="featurette" id="event_detail">
+  {% if object.image %} {% thumbnail object.image "300x300" crop="center" as im %}
+  <img class="featurette-image img-circle img-responsive pull-left" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"> {% endthumbnail %} {% endif %}
+  <h2 class="lead">{{ object.title }}
+    </h2>
+  <p class="event_time">Start: {{ object.start | date:"M d P" }}</p>
+  <p class="event_time">Start: {{ object.end | date:"M d P" }}</p>
+  <h2 class="featurette-title">
+    </h2>
+  <p class="body">{{ object.description }}</p>
+  <p class="body">{{object.body}}</p>
+  {% include "partials/share_facebook.html" %} {% include "partials/share_twitter.html" %}
 </div>
-{% endblock %}
-{% block active_link %}
-<input id="activeLink" type="hidden" value="eventsLink"/>
-{% endblock %}
+
+{% endblock %} {% block active_link %}
+<input id="activeLink" type="hidden" value="eventsLink" /> {% endblock %}
