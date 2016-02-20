@@ -2,7 +2,7 @@
 {% load thumbnail %}
 {% block content %}
 <div class="page-header">
-  <h1 class="lead" id="artists">Artists</h1>
+  <h1 class="lead" id="artists">Artist Galleries & Exhibits</h1>
 </div>
 
 <div class="row">
@@ -15,11 +15,13 @@
         {% endthumbnail %}
       </a>
       <div class="caption">
-        <h3 class="artist_title">{{ item.title }}</h3>
+        <a href="{{ item.get_absolute_url }}">
+          <h3 class="artist_title">{{ item.title }}</h3>
+        </a>
       <div class="artist_content">
         <p>{{ item.date }}</p>
         <p>{{ item.description }}</p>
-      </div>  
+      </div>
       </div>
     </div>
   </div>

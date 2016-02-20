@@ -224,6 +224,10 @@ footer .img-responsive {
   font-family: 'Pacifico', cursive;
 }
 
+.caption a:hover {
+  text-decoration: none;
+}
+
 .artist_content {
   font-size: 15px;
 }
