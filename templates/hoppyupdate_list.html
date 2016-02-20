@@ -1,35 +1,50 @@
-{% extends "base.html" %}
-{% load thumbnail staticfiles %}
-{% block content %}
+{% extends "base.html" %} {% load thumbnail staticfiles %} {% block content %}
 
 <hr class="featurette-divider">
 
 <div class="featurette" id="hoppyupdate_detail">
   <img class="featurette-image img-circle img-responsive pull-left" src="{% static 'cowboyhoppy.png' %}" />
   <h2 class="lead"> Who is Hoppy?</h2>
-  <p class="body"> Hopy is our mascot! Omittam nominavi an vim, docendi alienum ad duo, ne possit graecis molestie sed. Agam graecis salutandi eu eos. Movet accusamus mel id, erant fabulas percipit vel eu. Percipit imperdiet evertitur mea te, justo posse adipiscing vis ea. Movet primis scriptorem et vel, no omittantur adversarium mel, ad cum animal voluptaria adipiscing. At labores propriae mediocritatem ius. Eu tation placerat iracundia nec, pri id nibh eleifend.</p>
+  <p class="body"> Hopy is our mascot! Omittam nominavi an vim, docendi alienum ad duo, ne possit graecis molestie sed. Agam graecis salutandi eu eos. Movet accusamus mel id, erant fabulas percipit vel eu. Percipit imperdiet evertitur mea te, justo posse adipiscing vis
+    ea. Movet primis scriptorem et vel, no omittantur adversarium mel, ad cum animal voluptaria adipiscing. At labores propriae mediocritatem ius. Eu tation placerat iracundia nec, pri id nibh eleifend.</p>
 </div>
 
-{% for update in object_list %}
-{% include 'partials/media.html' with item=update %}
-{% endfor %}
+<div class="row">
+  {% for item in object_list %}
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <a href="{{ item.get_absolute_url }}">
+        {% thumbnail item.image "300x300" crop="center" as im %}
+        <img class="" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+        {% endthumbnail %}
+      </a>
+      <div class="caption">
+        <a href="{{ item.get_absolute_url }}">
+          <h3 class="artist_title">{{ item.title }}</h3>
+        </a>
+        <div class="artist_content">
+          <p>{{ item.date }}</p>
+          <p>{{ item.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
 
-{% if pager %}
+{% for update in object_list %} {% endfor %} {% if pager %}
+
 <hr>
 <ul class="pager">
   {% if page_obj.has_previous %}
   <li class="previous">
     <a href="{% url 'hoppy-list' %}?page={{ page_obj.previous_page_number }}">Previous</a>
   </li>
-  {% endif %}
-  {% if page_obj.has_next %}
+  {% endif %} {% if page_obj.has_next %}
   <li class="next">
     <a href="{% url 'hoppy-list' %}?page={{ page_obj.next_page_number }}">Next</a>
   </li>
   {% endif %}
 </ul>
-{% endif %}
-{% endblock %}
-{% block active_link %}
-<input id="activeLink" type="hidden" value="hoppyLink"/>
-{% endblock %}
+{% endif %} {% endblock %} {% block active_link %}
+<input id="activeLink" type="hidden" value="hoppyLink" /> {% endblock %}
