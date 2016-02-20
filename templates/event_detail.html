@@ -1,0 +1,23 @@
+{% extends "base.html" %}{% load thumbnail %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="page-header">
+        <h1 class="lead">{{ object.title }} <small>{{ object.start | date }}</small></h1>
+        {% if object.image %}
+        {% thumbnail object.image "300x200" crop="center" as im %}
+        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+        {% endthumbnail %}
+        {% endif %}
+        <p>{{ object.description }}</p>
+        <p>Start: {{ object.start | date:"M d P" }}</p>
+        <p>Start: {{ object.end | date:"M d P" }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block active_link %}
+<input id="activeLink" type="hidden" value="eventsLink"/>
+{% endblock %}

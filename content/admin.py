@@ -1,11 +1,5 @@
 from django.contrib import admin
 from django import forms
-from happenings.models import (Tag,
-                               Location,
-                               Category,
-                               Event,
-                               Cancellation)
-from happenings.admin import EventAdmin as EventAdminBase
 from sorl.thumbnail.admin import AdminImageMixin
 from pagedown.widgets import AdminPagedownWidget
 
@@ -14,14 +8,8 @@ from content.models import (HoppyUpdate,
                             Gallery,
                             GalleryImage,
                             BannerAdvertisement,
-                            NewspaperArchive)
-
-
-class EventAdmin(EventAdminBase):
-    fields = ('start_date', 'end_date', 'all_day', 'repeat',
-              'end_repeat', 'title', 'description', 'created_by')
-    fieldsets = None
-    inlines = []
+                            NewspaperArchive,
+                            Event)
 
 
 class HoppyUpdateAdminForm(forms.ModelForm):
@@ -87,15 +75,18 @@ class NewspaperArchiveAdmin(admin.ModelAdmin):
         exclude = ()
 
 
-admin.site.unregister(Tag)
-admin.site.unregister(Location)
-admin.site.unregister(Category)
-admin.site.unregister(Event)
-admin.site.unregister(Cancellation)
+class EventAdmin(admin.ModelAdmin):
+    list_display = ('title', 'start', 'end')
+    prepopulated_fields = {'slug': ['title']}
 
-admin.site.register(Event, EventAdmin)
+    class Meta:
+        model = Event
+        exclude = ()
+
+
 admin.site.register(HoppyUpdate, HoppyUpdateAdmin)
 admin.site.register(Announcement, AnnouncementAdmin)
 admin.site.register(Gallery, GalleryAdmin)
 admin.site.register(BannerAdvertisement, BannerAdvertisementAdmin)
 admin.site.register(NewspaperArchive, NewspaperArchiveAdmin)
+admin.site.register(Event, EventAdmin)

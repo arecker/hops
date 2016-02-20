@@ -2,15 +2,16 @@ from django.views.generic import (TemplateView,
                                   ListView,
                                   DetailView,
                                   View)
-from django.shortcuts import render, render_to_response, RequestContext
-from happenings.views import (EventMonthView as EventMonthViewBase,
-                              EventDayView as EventDayViewBase,
-                              EventDetailView as EventDetailViewBase)
+from django.shortcuts import (render,
+                              render_to_response,
+                              RequestContext)
+from django.http import JsonResponse
 
 from content.models import (HoppyUpdate,
                             Announcement,
                             Gallery,
                             NewspaperArchive,
+                            Event,
                             search)
 
 
@@ -35,19 +36,10 @@ class HomeView(TemplateView):
         except Gallery.DoesNotExist:
             context['latest_gallery'] = None
 
+
+        context['latest_events'] = Event.objects.upcoming()
+
         return context
-
-
-class MonthView(EventMonthViewBase):
-    template_name = 'month.html'
-
-
-class DayView(EventDayViewBase):
-    template_name = 'day.html'
-
-
-class EventDetailView(EventDetailViewBase):
-    template_name = 'event.html'
 
 
 class HoppyUpdateListView(ListView):
@@ -108,3 +100,24 @@ class SearchView(View):
 
 class GiveView(TemplateView):
     template_name = 'give.html'
+
+
+class CalendarView(TemplateView):
+    template_name = 'calendar.html'
+
+
+class EventDetailView(DetailView):
+    template_name = 'event_detail.html'
+    model = Event
+
+
+def events(request):
+    qs = Event.objects.all()
+
+    events = [{'id': e.id,
+               'title': e.title,
+               'url': e.get_absolute_url(),
+               'start': e.start,
+               'end': e.end} for e in qs]
+
+    return JsonResponse(events, safe=False)

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="btn-group" role="group" aria-label="...">
+        <button id="calPrev" type="button" class="btn btn-default">Previous</button>
+        <button id="calToday" type="button" class="btn btn-default">Today</button>
+        <button id="calNext" type="button" class="btn btn-default">Next</button>
+      </div>
+      <div id="calendar"></div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block active_link %}
+<input id="activeLink" type="hidden" value="eventsLink"/>
+{% endblock %}
+{% block css %}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.print.css" rel="stylesheet"/>
+{% endblock %}
+{% block scripts %}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment-with-locales.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.min.js"></script>
+{% endblock %}

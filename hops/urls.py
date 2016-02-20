@@ -1,4 +1,4 @@
-from django.conf.urls import url, include
+from django.conf.urls import url
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib import admin
@@ -7,9 +7,6 @@ from hops import views
 
 
 urlpatterns = [url(r'^admin/', admin.site.urls),
-
-               url(r'^calendar/',
-                   include('hops.calendar_urls', namespace='calendar')),
 
                url(r'^announcements/$',
                    views.AnnouncementListView.as_view(),
@@ -41,7 +38,17 @@ urlpatterns = [url(r'^admin/', admin.site.urls),
                    views.GiveView.as_view(),
                    name='give'),
 
+               url(r'^events/$',
+                   views.CalendarView.as_view(),
+                   name='events-list'),
+
+               url(r'^events/(?P<slug>[^/]+)/$',
+                   views.EventDetailView.as_view(),
+                   name='event-detail'),
+
                url(r'^search/$', views.SearchView.as_view(), name='search'),
+
+               url(r'^api/events/$', views.events, name='api:events'),
 
                url(r'^$', views.HomeView.as_view(), name='home')]
 

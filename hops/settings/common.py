@@ -13,7 +13,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # 3rd Party Apps
-    'happenings',
     'sorl.thumbnail',
     'pagedown',
     'markdown_deux',

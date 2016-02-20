@@ -3,6 +3,7 @@ from uuid import uuid4
 from django.db import models
 from django.db.models import Q
 from django.core.urlresolvers import reverse
+from django.core.exceptions import ValidationError
 from django.utils import timezone
 from sorl.thumbnail import ImageField
 
@@ -130,3 +131,39 @@ class NewspaperArchive(models.Model):
     class Meta:
         verbose_name = 'Newspaper Archive'
         ordering = ('-date', )
+
+
+class EventQuerySet(models.QuerySet):
+    def upcoming(self):
+        today = timezone.now()
+        next_week = today + timezone.timedelta(weeks=1)
+        return self.filter(start__gte=today,
+                           start__lte=next_week)
+
+
+class Event(models.Model):
+    objects = EventQuerySet.as_manager()
+
+    id = models.UUIDField(primary_key=True,
+                          unique=True,
+                          default=uuid4,
+                          editable=False)
+
+    start = models.DateTimeField()
+    end = models.DateTimeField()
+
+    title = models.CharField(max_length=120)
+    slug = models.SlugField(unique=True)
+    image = ImageField(upload_to='events/', blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+
+    def clean(self):
+        if self.start > self.end:
+            raise ValidationError('Start cannot fall after end')
+
+    def get_absolute_url(self):
+        return reverse('event-detail',
+                       args=[str(self.slug)])
+
+    def __unicode__(self):
+        return self.title
