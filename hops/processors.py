@@ -1,5 +1,3 @@
-import os
-
 from django.conf import settings as django_settings
 
 from content.models import BannerAdvertisement
