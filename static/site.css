@@ -255,3 +255,7 @@ footer .img-responsive {
 .twitter-share-button[style] { /* hack needed to align share buttons */
     vertical-align: text-bottom !important; /* http://goo.gl/Ua8Mim */
 }
+
+.well {
+    margin-top: 5%;
+}

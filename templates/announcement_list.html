@@ -1,10 +1,11 @@
 {% extends "base.html" %} {% load thumbnail %} {% block content %}
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <div class="alert alert-success" role="alert">
-      <i class="fa fa-newspaper-o"></i> Did you know we have a newspaper? &nbsp;
-      <a href="{% url 'newspaper-list' %}" class="alert-link">View the archives here!</a>
+  <div class="col-md-8 col-md-offset-2">
+    <div class="well">
+      <p class="lead"><i class="fa fa-newspaper-o"></i>&nbsp; The Hops Museum Newspaper</p>
+      <p>Did you know the hops museum has a printed newspaper?
+        You can read archived copies <a href="{% url 'newspaper-list' %}">here</a></p>
     </div>
   </div>
 </div>
