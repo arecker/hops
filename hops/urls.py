@@ -48,7 +48,7 @@ urlpatterns = [url(r'^admin/', admin.site.urls),
 
                url(r'^search/$', views.SearchView.as_view(), name='search'),
 
-               url(r'^api/events/$', views.events, name='api:events'),
+               url(r'^api/events/$', views.events, name='api-events'),
 
                url(r'^$', views.HomeView.as_view(), name='home')]
 
