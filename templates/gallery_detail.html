@@ -12,7 +12,7 @@
     <h2 class="featurette-title">
     </h2>
     <p class="body">{{ object.description }}</p>
-    <p class="body">{{object.body}}</p>
+    <p class="body">{{object.body |markdown }}</p>
     {% include "partials/share.html" %}
     <hr>
   </div>
@@ -31,5 +31,13 @@
   </div>
   {% endfor %}
 </div>
+
+<hr>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    {% include "partials/comments.html" %}
+  </div>
+</div>
+
 {% endblock %} {% block active_link %}
 <input id="activeLink" type="hidden" value="galleryLink" /> {% endblock %}

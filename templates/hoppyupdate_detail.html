@@ -12,6 +12,12 @@
     <p class="body">{{ object.description }}</p>
     <p class="body">{{object.body}}</p>
     {% include "partials/share.html" %}
+    <hr>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        {% include "partials/comments.html" %}
+      </div>
+    </div>
   </div>
 </div>
 
