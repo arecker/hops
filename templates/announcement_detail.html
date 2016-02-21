@@ -2,17 +2,19 @@
 
 <hr class="featurette-divider">
 
-<div class="featurette" id="announcement_detail">
-  {% if object.image %} {% thumbnail object.image "300x300" crop="center" as im %}
-  <img class="featurette-image img-circle img-responsive pull-left" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"> {% endthumbnail %} {% endif %}
-  <h2 class="lead">{{ object.title }}
+<div class="col-md-10 col-md-offset-1">
+  <div class="featurette" id="announcement_detail">
+    {% if object.image %} {% thumbnail object.image "300x300" crop="center" as im %}
+    <img class="featurette-image img-circle img-responsive pull-left" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"> {% endthumbnail %} {% endif %}
+    <h2 class="lead">{{ object.title }}
     </h2>
-  <p class="detail">{{ object.date | date }}</p>
-  <h2 class="featurette-title">
-    </h2>
-  <p class="body">{{ object.description }}</p>
-  <p class="body">{{object.body}}</p>
+    <p class="detail">{{ object.date | date }}</p>
+    <p class="body">{{ object.description }}</p>
+    <p class="body">{{object.body}}</p>
+    {% include "partials/share.html" %}
+  </div>
 </div>
+
 
 {% endblock %} {% block active_link %}
 <input id="activeLink" type="hidden" value="announcementLink" /> {% endblock %}
