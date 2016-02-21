@@ -251,3 +251,7 @@ footer .img-responsive {
   font-family: 'Pacifico', cursive;
   font-size: 20px;
 }
+
+.twitter-share-button[style] { /* hack needed to align share buttons */
+    vertical-align: text-bottom !important; /* http://goo.gl/Ua8Mim */
+}
