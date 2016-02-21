@@ -47,7 +47,8 @@ TEMPLATES = [
 
                 # Custom processors
                 'hops.processors.settings',
-                'hops.processors.advertisement'
+                'hops.processors.advertisement',
+                'hops.processors.path'
             ],
         },
     },

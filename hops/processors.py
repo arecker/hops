@@ -1,3 +1,5 @@
+import os
+
 from django.conf import settings as django_settings
 
 from content.models import BannerAdvertisement
@@ -10,3 +12,9 @@ def settings(request):
 
 def advertisement(request):
     return {'ad': BannerAdvertisement.objects.pluck()}
+
+
+def path(request):
+    if django_settings.DEBUG:
+        return {'CURRENT_PAGE': 'testing.com'}
+    return {'CURRENT_PAGE': request.get_full_path()}
