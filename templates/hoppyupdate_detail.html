@@ -17,7 +17,7 @@
     </h2>
     <p class="detail">{{ object.date | date }}</p>
     <p class="body">{{ object.description }}</p>
-    <p class="body">{{object.body}}</p>
+    <p class="body">{{ object.body | markdown }}</p>
     {% include "partials/share.html" %}
     <hr>
     <div class="row">

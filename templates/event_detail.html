@@ -16,7 +16,7 @@
     <p class="event_time">Start: {{ object.start | date:"M d P" }}</p>
     <p class="event_time">End: {{ object.end | date:"M d P" }}</p>
     <p class="body">{{ object.description }}</p>
-    <p class="body">{{object.body |markdown }}</p>
+    <p class="body">{{object.body | markdown }}</p>
     {% include "partials/share.html" %}
     <hr>
     <div class="row">
