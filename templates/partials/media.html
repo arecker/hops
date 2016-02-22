@@ -1,6 +1,6 @@
 <div class="media">{% load thumbnail %}
   {% if item.image %}
-  <div class="media-left">
+  <div class="media-left hidden-xs">
     <a href="{{ item.get_absolute_url }}">
       {% thumbnail item.image "100x100" crop="center" as im %}
       <img class="media-object img-circle" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
