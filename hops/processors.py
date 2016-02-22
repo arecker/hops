@@ -23,3 +23,4 @@ def analytics(request):
     if not django_settings.DEBUG:
         value = getattr(django_settings,'GOOGLE_ANALYTICS_ID', None)
         return {'GOOGLE_ANALYTICS_ID': value}
+    return {}
