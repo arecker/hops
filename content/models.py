@@ -40,7 +40,7 @@ class UpdateBase(models.Model):
     body = models.TextField(blank=True, null=True)
 
     def __unicode__(self):
-        return self.description
+        return self.title
 
     class Meta:
         abstract = True
