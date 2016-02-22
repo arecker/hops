@@ -2,7 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8"/>
+
+    {% block meta %}
     <title>The Hops Museum</title>
+    <meta property="og:title" content="The Hops Museum" />
+    <meta name="description" content="Welcome to the Hops Museum. Our mission is to bring together groups of talented individuals to educate and inspire one another in community." />
+    <meta property="og:description" content="Welcome to the Hops Museum. Our mission is to bring together groups of talented individuals to educate and inspire one another in community." />
+    <meta property="og:image" content="http://{{ DOMAIN }}{% static 'img/logo.png' %}" />
+    <meta property="og:url" content="http://{{ DOMAIN }}{{ CURRENT_PAGE }}" />
+    {% endblock %}
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

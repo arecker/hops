@@ -1,4 +1,9 @@
-{% extends "base.html" %}{% load thumbnail markdown_deux_tags %} {% block content %}
+{% extends "base.html" %}
+{% load thumbnail markdown_deux_tags %}
+{% block meta %}
+{% include "partials/detail_meta.html" with object=object %}
+{% endblock %}
+{% block content %}
 
 <hr class="featurette-divider">
 
