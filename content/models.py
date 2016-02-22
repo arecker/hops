@@ -42,6 +42,12 @@ class UpdateBase(models.Model):
     def __unicode__(self):
         return self.title
 
+    @property
+    def body_teaser(self):
+        '''return a truncated body'''
+        words = self.body.split()[:50]
+        return ' '.join(words) + '...'
+
     class Meta:
         abstract = True
 

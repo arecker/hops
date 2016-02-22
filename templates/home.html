@@ -1,4 +1,5 @@
-{% extends "base.html" %} {% load thumbnail %}
+{% extends "base.html" %}
+{% load thumbnail markdown_deux_tags %}
 {% block content %}
 <hr class="top-divider">
 
@@ -95,7 +96,7 @@
         <h4 class="media-heading">{{ latest_hoppy.title }}</h4>
       </a>
       <p class="lead">{{ latest_hoppy.description }}</p>
-      <p class="lead">{{ latest_hoppy.body }}</p>
+      <p class="lead">{{ latest_hoppy.body_teaser | markdown }}</p>
     </div>
   </div>
 </div>
