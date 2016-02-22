@@ -67,4 +67,4 @@ MEDIA_URL = '/media/'
 ADMIN_MEDIA_PREFIX = '/media/'
 STATIC_URL = '/static/'
 
-DOMAIN = 'thehopsmuseum.org'
+DOMAIN = 'thehopsmuseum.org'  # no trailing slash or protocol
