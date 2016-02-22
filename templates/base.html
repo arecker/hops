@@ -1,13 +1,8 @@
-<!doctype html>{% load staticfiles thumbnail %}
+<!doctype html>{% load staticfiles thumbnail compress %}
 <html lang="en">
   <head>
     <meta charset="UTF-8"/>
     <title>The Hops Museum</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -16,10 +11,17 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <link href="{% static 'template.css' %}" rel="stylesheet"/>
-    <link href="{% static 'site.css' %}" rel="stylesheet"/>
+    {% compress css %}
+    <link href="{% static 'libs/bootstrap.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'libs/source-sans-pro.css' %}" rel="stylesheet"/>
+    <link href="{% static 'libs/handlee.css' %}" rel="stylesheet"/>
+    <link href="{% static 'libs/pacifico.css' %}" rel="stylesheet"/>
+    <link href="{% static 'libs/template.css' %}" rel="stylesheet"/>
+    <link href="{% static 'libs/font-awesome.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/site.css' %}" rel="stylesheet"/>
     {% block css %}
     {% endblock %}
+    {% endcompress %}
   </head>
   <body>
 
@@ -127,11 +129,15 @@
     {% block active_link %}
     <input id="activeLink" type="hidden" value="homeLink"/>
     {% endblock %}
-    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <script src="{% static 'abigimage.min.js' %}"></script>
-    <script src="{% static 'site.js' %}"></script>
+
+    {% compress js %}
+    <script src="{% static 'libs/jquery.min.js' %}"></script>
+    <script src="{% static 'libs/bootstrap.min.js' %}"></script>
+    <script src="{% static 'libs/abigimage.min.js' %}"></script>
+    <script src="{% static 'js/site.js' %}"></script>
     {% block scripts %}
     {% endblock %}
+    {% endcompress %}
+
   </body>
 </html>

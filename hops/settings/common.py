@@ -16,6 +16,7 @@ INSTALLED_APPS = [
     'sorl.thumbnail',
     'pagedown',
     'markdown_deux',
+    'compressor',
 
     # Project Apps
     'content'

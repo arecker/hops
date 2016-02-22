@@ -1,4 +1,5 @@
-{% extends "base.html" %}{% load staticfiles %}
+{% extends "base.html" %}
+{% load staticfiles %}
 {% block content %}
 <div class="container">
   <div class="row">
@@ -13,15 +14,18 @@
   </div>
 </div>
 {% endblock %}
+
 {% block active_link %}
 <input id="activeLink" type="hidden" value="eventsLink"/>
 {% endblock %}
+
 {% block css %}
-<link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.min.css" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.print.css" rel="stylesheet"/>
+<link href="{% static 'libs/fullcalendar.min.css' %}" rel="stylesheet"/>
+<link href="{% static 'libs/fullcalendar.print.css' %}" rel="stylesheet"/>
 {% endblock %}
+
 {% block scripts %}
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment-with-locales.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.min.js"></script>
-<script type="text/javascript" src="{% static 'calendar.js' %}"></script>
+<script type="text/javascript" src="{% static 'libs/moment-with-locales.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'libs/fullcalendar.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/calendar.js' %}"></script>
 {% endblock %}
