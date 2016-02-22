@@ -30,6 +30,10 @@ a:hover, .navbar-default .navbar-nav > li > a:focus {
     color: #808080;
 }
 
+.navbar a:hover {
+  background-color: red;
+}
+
 .headline {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -340,5 +344,20 @@ footer .img-responsive {
 }
 
 #newspaper-body {
+  font-size: 20px;
+}
+
+#donate h1 {
+  font-size: 40px;
+}
+
+#donate h2 {
+  color: #330000;
+  font-family: 'Pacifico', cursive;
+  font-size: 25px;
+  background-color: white;
+}
+
+#donate p {
   font-size: 20px;
 }

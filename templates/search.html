@@ -1,28 +1,20 @@
-{% extends "base.html" %}
-{% block content %}
-<div class="container">
-  <div class="row">
-    {% if announcements %}
-    <div class="col-md-4">
-      {% for item in announcements %}
-      {% include "partials/search_result.html" with item=item %}
-      {% endfor %}
+{% extends "base.html" %} {% block content %}
+
+  <div class="container">
+    <div class="row">
+      {% if announcements %}
+      <div class="col-md-4">
+        {% for item in announcements %} {% include "partials/search_result.html" with item=item %} {% endfor %}
+      </div>
+      {% endif %} {% if hoppies %}
+      <div class="col-md-4">
+        {% for item in hoppies %} {% include "partials/search_result.html" with item=item %} {% endfor %}
+      </div>
+      {% endif %} {% if galleries %}
+      <div class="col-md-4">
+        {% for item in galleries %} {% include "partials/search_result.html" with item=item %} {% endfor %}
+      </div>
+      {% endif %}
     </div>
-    {% endif %}
-    {% if hoppies %}
-    <div class="col-md-4">
-      {% for item in hoppies %}
-      {% include "partials/search_result.html" with item=item %}
-      {% endfor %}
-    </div>
-    {% endif %}
-    {% if galleries %}
-    <div class="col-md-4">
-      {% for item in galleries %}
-      {% include "partials/search_result.html" with item=item %}
-      {% endfor %}
-    </div>
-    {% endif %}
   </div>
-</div>
-{% endblock %}
+  {% endblock %}
