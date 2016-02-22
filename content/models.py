@@ -156,7 +156,7 @@ class Event(models.Model):
                           editable=False)
 
     start = models.DateTimeField()
-    end = models.DateTimeField()
+    end = models.DateTimeField(blank=True, null=True)
 
     title = models.CharField(max_length=120)
     slug = models.SlugField(unique=True)
@@ -164,7 +164,7 @@ class Event(models.Model):
     description = models.TextField(blank=True, null=True)
 
     def clean(self):
-        if self.start > self.end:
+        if self.end and self.start > self.end:
             raise ValidationError('Start cannot fall after end')
 
     def get_absolute_url(self):
