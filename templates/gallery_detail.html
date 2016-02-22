@@ -18,7 +18,7 @@
     <h2 class="featurette-title">
     </h2>
     <p class="body">{{ object.description }}</p>
-    <p class="body">{{ object.body | markdown }}</p>
+    <div class="body">{{ object.body | markdown }}</div>
     {% include "partials/share.html" %}
     <hr>
   </div>

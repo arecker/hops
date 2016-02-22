@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load thumbnail markdown_deux_tags %}
+{% load thumbnail %}
 {% block meta %}
 {% include "partials/detail_meta.html" with object=object %}
 {% endblock %}
@@ -13,10 +13,12 @@
     <img class="featurette-image img-circle img-responsive pull-left" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"> {% endthumbnail %} {% endif %}
     <h2 class="lead">{{ object.title }}
     </h2>
-    <p class="event_time">Start: {{ object.start | date:"M d P" }}</p>
-    <p class="event_time">End: {{ object.end | date:"M d P" }}</p>
+    {% if object.end %}
+    <p class="event_time">{{ object.start | date:"M d P" }} - {{ object.end | date:"P" }}</p>
+    {% else %}
+    <p class="event_time">{{ object.start | date:"M d P" }}</p>
+    {% endif %}
     <p class="body">{{ object.description }}</p>
-    <p class="body">{{object.body | markdown }}</p>
     {% include "partials/share.html" %}
     <hr>
     <div class="row">

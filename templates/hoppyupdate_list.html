@@ -1,9 +1,15 @@
 {% extends "base.html" %} {% load thumbnail staticfiles %} {% block content %}
 
-<hr class="featurette-divider">
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="alert alert-success text-center" role="alert"> Want to help with hoppy? Email us at
+      <a href="mailto:{{ CURATOR_EMAIL }}" class="alert-link">{{ CURATOR_EMAIL }}</a>
+    </div>
+  </div>
+</div>
 
 <div class="featurette" id="hoppyupdate_detail">
-  <img class="featurette-image img-circle img-responsive pull-left" src="{% static 'cowboyhoppy.png' %}" />
+  <img class="featurette-image img-circle img-responsive pull-left" src="{% static 'img/cowboyhoppy.png' %}" />
   <h2 class="lead"> Who is Hoppy?</h2>
   <p class="body"> Hopy is our mascot! Omittam nominavi an vim, docendi alienum ad duo, ne possit graecis molestie sed. Agam graecis salutandi eu eos. Movet accusamus mel id, erant fabulas percipit vel eu. Percipit imperdiet evertitur mea te, justo posse adipiscing vis
     ea. Movet primis scriptorem et vel, no omittantur adversarium mel, ad cum animal voluptaria adipiscing. At labores propriae mediocritatem ius. Eu tation placerat iracundia nec, pri id nibh eleifend.</p>
