@@ -24,7 +24,10 @@
   <link href="{% static 'libs/pacifico.css' %}" rel="stylesheet" />
   <link href="{% static 'libs/template.css' %}" rel="stylesheet" />
   <link href="{% static 'libs/font-awesome.min.css' %}" rel="stylesheet" />
-  <link href="{% static 'css/site.css' %}" rel="stylesheet" /> {% block css %} {% endblock %} {% endcompress %}
+  <link href="{% static 'css/site.css' %}" rel="stylesheet" />
+  {% block css %}
+  {% endblock %}
+  {% endcompress %}
 </head>
 
 <body>

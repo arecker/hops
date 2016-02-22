@@ -7,11 +7,6 @@
 <div class="container">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
-      <div class="btn-group" role="group" aria-label="...">
-        <button id="calPrev" type="button" class="btn btn-default">Previous</button>
-        <button id="calToday" type="button" class="btn btn-default">Today</button>
-        <button id="calNext" type="button" class="btn btn-default">Next</button>
-      </div>
       <div id="calendar"></div>
     </div>
   </div>
@@ -24,7 +19,7 @@
 
 {% block css %}
 <link href="{% static 'libs/fullcalendar.min.css' %}" rel="stylesheet"/>
-<link href="{% static 'libs/fullcalendar.print.css' %}" rel="stylesheet"/>
+<link href="{% static 'libs/fullcalendar.print.css' %}" rel="stylesheet" media="print"/>
 {% endblock %}
 
 {% block scripts %}
