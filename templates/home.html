@@ -40,7 +40,7 @@
         <h4 class="media-heading">{{ latest_announcement.title }}</h4>
       </a>
       <p class="lead">{{ latest_announcement.description }}</p>
-      <p class="lead">{{ latest_announcement.body }}</p>
+      <p class="lead">{{ latest_hoppy.body_teaser | markdown }}</p>
     </div>
   </div>
 </div>
@@ -77,7 +77,7 @@
         <h4 class="media-heading">{{ latest_gallery.title }}</h4>
       </a>
       <p class="lead">{{ latest_gallery.description }}</p>
-      <p class="lead">{{ latest_gallery.body }}</p>
+      <p class="lead">{{ latest_hoppy.body_teaser | markdown }}</p>
     </div>
   </div>
 </div>

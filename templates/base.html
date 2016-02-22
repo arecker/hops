@@ -1,163 +1,159 @@
 <!doctype html>{% load staticfiles thumbnail compress %}
 <html lang="en">
-  <head>
-    <meta charset="UTF-8"/>
 
-    {% block meta %}
-    <title>The Hops Museum</title>
-    <meta property="og:title" content="The Hops Museum" />
-    <meta name="description" content="Welcome to the Hops Museum. Our mission is to bring together groups of talented individuals to educate and inspire one another in community." />
-    <meta property="og:description" content="Welcome to the Hops Museum. Our mission is to bring together groups of talented individuals to educate and inspire one another in community." />
-    <meta property="og:image" content="http://{{ DOMAIN }}{% static 'img/logo.png' %}" />
-    <meta property="og:url" content="http://{{ DOMAIN }}{{ CURRENT_PAGE }}" />
-    {% endblock %}
+<head>
+  <meta charset="UTF-8" /> {% block meta %}
+  <title>The Hops Museum</title>
+  <meta property="og:title" content="The Hops Museum" />
+  <meta name="description" content="Welcome to the Hops Museum. Our mission is to bring together groups of talented individuals to educate and inspire one another in community." />
+  <meta property="og:description" content="Welcome to the Hops Museum. Our mission is to bring together groups of talented individuals to educate and inspire one another in community." />
+  <meta property="og:image" content="http://{{ DOMAIN }}{% static 'img/logo.png' %}" />
+  <meta property="og:url" content="http://{{ DOMAIN }}{{ CURRENT_PAGE }}" /> {% endblock %}
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    {% compress css %}
-    <link href="{% static 'libs/bootstrap.min.css' %}" rel="stylesheet"/>
-    <link href="{% static 'libs/source-sans-pro.css' %}" rel="stylesheet"/>
-    <link href="{% static 'libs/handlee.css' %}" rel="stylesheet"/>
-    <link href="{% static 'libs/pacifico.css' %}" rel="stylesheet"/>
-    <link href="{% static 'libs/template.css' %}" rel="stylesheet"/>
-    <link href="{% static 'libs/font-awesome.min.css' %}" rel="stylesheet"/>
-    <link href="{% static 'css/site.css' %}" rel="stylesheet"/>
-    {% block css %}
-    {% endblock %}
-    {% endcompress %}
-  </head>
-  <body>
+  {% compress css %}
+  <link href="{% static 'libs/bootstrap.min.css' %}" rel="stylesheet" />
+  <link href="{% static 'libs/source-sans-pro.css' %}" rel="stylesheet" />
+  <link href="{% static 'libs/handlee.css' %}" rel="stylesheet" />
+  <link href="{% static 'libs/pacifico.css' %}" rel="stylesheet" />
+  <link href="{% static 'libs/template.css' %}" rel="stylesheet" />
+  <link href="{% static 'libs/font-awesome.min.css' %}" rel="stylesheet" />
+  <link href="{% static 'css/site.css' %}" rel="stylesheet" /> {% block css %} {% endblock %} {% endcompress %}
+</head>
 
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) return;
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1959693110922779";
-         fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));
-    </script>
+<body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <!-- <a class="navbar-brand" href="#">Start Bootstrap</a> -->
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li id="homeLink"><a href="{% url 'home' %}">Home</a></li>
-            <li id="announcementLink"><a href="{% url 'announcement-list' %}">Announcements</a></li>
-            <li id="eventsLink"><a href="{% url 'events-list' %}">Events</a></li>
-            <li id="galleryLink"><a href="{% url 'gallery-list' %}">Galleries/ Exhibits</a></li>
-            <li id="hoppyLink"><a href="{% url 'hoppy-list' %}">Hoppy</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li id="giveLink"><a href="{% url 'give' %}"><i class="fa fa-heart"></i>&nbsp Giving</a></li>
-            <form class="navbar-form navbar-left" action="{% url 'search' %}" method="post" role="search">
-              <div class="form-group">
-                <input name="term" type="text" class="form-control" placeholder="Search">
-              </div>
-              <button type="submit" class="btn btn-default">Submit</button>
-              {% csrf_token %}
-            </form>
-            {% if user.is_superuser %}
-            <li><a href="{% url 'admin:index' %}">Admin</a></li>
-            {% endif %}
-          </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-      </div>
-      <!-- /.container -->
-    </nav>
+  <div id="fb-root"></div>
+  <script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1959693110922779";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
 
-    <!-- Full Width Image Header -->
+  <!-- Navigation -->
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <header class="header-image">
-            <div class="headline text-center">
-              <img class="img-responsive" src="{% static 'img/logo.png' %}" alt="VintageHopsLogo" id="logo"/>
-              <div class="col-md-8 col-md-offset-2">
-                <p class="statement">
-                  Welcome to the Hops Museum. Our mission is to bring together groups of talented
-                  individuals to educate and inspire one another in community.
-                </p>
-              </div>
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- <a class="navbar-brand" href="#">Start Bootstrap</a> -->
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li id="homeLink"><a href="{% url 'home' %}">Home</a></li>
+          <li id="announcementLink"><a href="{% url 'announcement-list' %}">Announcements</a></li>
+          <li id="eventsLink"><a href="{% url 'events-list' %}">Events</a></li>
+          <li id="galleryLink"><a href="{% url 'gallery-list' %}">Exhibits</a></li>
+          <li id="hoppyLink"><a href="{% url 'hoppy-list' %}">Hoppy</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li id="giveLink"><a href="{% url 'give' %}"><i class="fa fa-heart"></i>&nbsp Giving</a></li>
+          <li><a href="http://www.google.com"><i class="fa fa-globe"></i>&nbsp Wiki</a></li>
+          {% if user.is_superuser %}
+          <li><a href="{% url 'admin:index' %}">Admin</a></li>
+          {% endif %}
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <br>
+      <form class="search-container" action="{% url 'search' %}" method="POST"> {% csrf_token %}
+        <input id="search-box" name="term" type="text" class="search-box" />
+        <label for="search-box"><span class="fa fa-search search-icon"></span></label>
+        <input type="submit" id="search-submit" />
+      </form>
+    </div>
+  </div>
+
+  <!-- Full Width Image Header -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <header class="header-image">
+          <div class="headline text-center">
+            <img class="img-responsive" src="{% static 'img/logo.png' %}" alt="VintageHopsLogo" id="logo" />
+            <div class="col-md-8 col-md-offset-2">
+              <p class="statement">
+                Welcome to the Hops Museum. Our mission is to bring together groups of talented individuals to educate and inspire one another in community.
+              </p>
             </div>
-          </header>
-        </div>
+          </div>
+        </header>
       </div>
     </div>
+  </div>
 
-    <div class="container main">
-      {% block content %}
-      {% endblock %}
-    </div>
+  <div class="container main">
+    {% block content %} {% endblock %}
+  </div>
 
 
-    <!-- Footer -->
-    <footer>
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          {% if ad %}
-          <p><small>The Hops Museum would like to thank:</small></p>
-            {% if ad.link %}
-            <a href="{{ ad.link }}">
+  <!-- Footer -->
+  <footer>
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        {% if ad %}
+        <p><small>The Hops Museum would like to thank:</small></p>
+        {% if ad.link %}
+        <a href="{{ ad.link }}">
               {% thumbnail ad.image "700x100" crop="center" as im %}
               <img src="{{ im.url }}" class="img-responsive">
               {% endthumbnail %}
-            </a>
-            {% else %}
-            {% thumbnail ad.image "700x100" crop="center" as im %}
-            <img class="img-responsive" src="{{ im.url }}" class="img-responsive">
-            {% endthumbnail %}
-            {% endif %}
-          </div>
-          {% endif %}
-          <br/>
-          <p class="text-center">Copyright &copy; The Hops Museum 2016</p>
-        </div>
+            </a> {% else %} {% thumbnail ad.image "700x100" crop="center" as im %}
+        <img class="img-responsive" src="{{ im.url }}" class="img-responsive"> {% endthumbnail %} {% endif %}
       </div>
-    </footer>
+      {% endif %}
+      <br/>
+      <p class="text-center">Copyright &copy; The Hops Museum 2016</p>
+    </div>
+    </div>
+  </footer>
 
-    {% block active_link %}
-    <input id="activeLink" type="hidden" value="homeLink"/>
-    {% endblock %}
+  {% block active_link %}
+  <input id="activeLink" type="hidden" value="homeLink" /> {% endblock %} {% compress js %}
+  <script src="{% static 'libs/jquery.min.js' %}"></script>
+  <script src="{% static 'libs/bootstrap.min.js' %}"></script>
+  <script src="{% static 'libs/abigimage.min.js' %}"></script>
+  <script src="{% static 'js/site.js' %}"></script>
+  {% block scripts %} {% endblock %} {% endcompress %} {% if GOOGLE_ANALYTICS_ID %} {% compress js inline %}
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', '{{ GOOGLE_ANALYTICS_ID }}', '{{ DOMAIN }}');
+    ga('send', 'pageview');
+  </script>
+  {% endcompress %} {% endif %}
+</body>
 
-    {% compress js %}
-    <script src="{% static 'libs/jquery.min.js' %}"></script>
-    <script src="{% static 'libs/bootstrap.min.js' %}"></script>
-    <script src="{% static 'libs/abigimage.min.js' %}"></script>
-    <script src="{% static 'js/site.js' %}"></script>
-    {% block scripts %}
-    {% endblock %}
-    {% endcompress %}
-
-    {% if GOOGLE_ANALYTICS_ID %}
-    {% compress js inline %}
-    <script>
-     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-     ga('create', '{{ GOOGLE_ANALYTICS_ID }}', '{{ DOMAIN }}');
-     ga('send', 'pageview');
-    </script>
-    {% endcompress %}
-    {% endif %}
-  </body>
 </html>

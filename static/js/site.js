@@ -1,5 +1,7 @@
 /*global $*/
 
+document.addEventListener("touchstart", function(){}, true);
+
 function updateNavbar() {
     var activeLink = '#' + $('#activeLink').val();
     $('.navbar-nav').find('li').removeClass('active');
