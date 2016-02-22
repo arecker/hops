@@ -322,3 +322,23 @@ footer .img-responsive {
 .well {
     margin-top: 5%;
 }
+
+.fc-center h2 {
+  color: #330000;
+  font-family: 'Pacifico', cursive;
+  font-size: 40px;
+  background-color: white;
+}
+
+#newspaper-title {
+  font-size: 30px;
+  background-color: #e6ffe6;
+}
+
+#newspaper {
+  background-color: #e6ffe6;
+}
+
+#newspaper-body {
+  font-size: 20px;
+}
