@@ -35,6 +35,7 @@ class AnnouncementAdminForm(forms.ModelForm):
 
 class AnnouncementAdmin(AdminImageMixin, admin.ModelAdmin):
     form = AnnouncementAdminForm
+    list_display = ('title', 'date')
     prepopulated_fields = {'slug': ['title']}
 
 
@@ -55,6 +56,7 @@ class GalleryAdmin(AdminImageMixin, admin.ModelAdmin):
     form = GalleryForm
     prepopulated_fields = {'slug': ['title']}
     inlines = [GalleryImageAdmin]
+    list_display = ('title', 'date')
 
     class Meta:
         model = Gallery
