@@ -49,7 +49,8 @@ TEMPLATES = [
                 # Custom processors
                 'hops.processors.settings',
                 'hops.processors.advertisement',
-                'hops.processors.path'
+                'hops.processors.path',
+                'hops.processors.analytics'
             ],
         },
     },
@@ -65,3 +66,5 @@ USE_TZ = True
 MEDIA_URL = '/media/'
 ADMIN_MEDIA_PREFIX = '/media/'
 STATIC_URL = '/static/'
+
+DOMAIN = 'thehopsmuseum.org'

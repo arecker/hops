@@ -52,3 +52,5 @@ LOGGING = {
 }
 
 CURATOR_EMAIL = 'alex@reckerfamily.com'
+
+GOOGLE_ANALYTICS_ID = 'LOL_NOT_A_REAL_KEY'
