@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" /> {% block meta %}
+  <meta charset="UTF-8" />
+  <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon" /> {% block meta %}
   <title>The Hops Museum</title>
   <meta property="og:title" content="The Hops Museum" />
   <meta name="description" content="Welcome to the Hops Museum. Our mission is to bring together groups of talented individuals to educate and inspire one another in community." />
@@ -24,10 +25,7 @@
   <link href="{% static 'libs/robot-slab.css' %}" rel="stylesheet" />
   <link href="{% static 'libs/template.css' %}" rel="stylesheet" />
   <link href="{% static 'libs/font-awesome.min.css' %}" rel="stylesheet" />
-  <link href="{% static 'css/site.css' %}" rel="stylesheet" />
-  {% block css %}
-  {% endblock %}
-  {% endcompress %}
+  <link href="{% static 'css/site.css' %}" rel="stylesheet" /> {% block css %} {% endblock %} {% endcompress %}
 </head>
 
 <body>
