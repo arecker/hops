@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load thumbnail markdown_deux_tags staticfiles %}
 {% block content %}
-<hr class="top-divider">
+<br>
 
 <div class="row social text-center">
   <div class="col-md-4 col-md-offset-4">
@@ -26,7 +26,8 @@
   </div>
 </div>
 
-<hr class="featurette-divider">
+<br>
+<br>
 
 <!-- Announcements -->
 <div class="featurette" id="announcements">
@@ -39,8 +40,10 @@
       <a href="{{ latest_announcement.get_absolute_url }}">
         <h4 class="media-heading">{{ latest_announcement.title }}</h4>
       </a>
-      <p class="lead">{{ latest_announcement.description }}</p>
-      <p class="lead">{{ latest_hoppy.body_teaser | markdown }}</p>
+      <div class="body_text">
+        <p>{{ latest_announcement.description }}</p>
+           {{ latest_hoppy.body_teaser | markdown }}
+      </div>
     </div>
   </div>
 </div>
@@ -57,7 +60,7 @@
       <a href="{{ event.get_absolute_url }}">
         <h4 class="media-heading">{{ event.title }}</h4>
       </a>
-      <p>{{ event.description }}</p>
+      <p class="body_text">{{ event.description }}</p>
     </div>
   </div>
   {% endfor %}
@@ -76,8 +79,10 @@
       <a href="{{ latest_gallery.get_absolute_url }}">
         <h4 class="media-heading">{{ latest_gallery.title }}</h4>
       </a>
-      <p class="lead">{{ latest_gallery.description }}</p>
-      <p class="lead">{{ latest_hoppy.body_teaser | markdown }}</p>
+      <div class="body_text">
+      <p>{{ latest_gallery.description }}</p>
+          {{ latest_hoppy.body_teaser | markdown }}
+      </div>
     </div>
   </div>
 </div>
@@ -95,8 +100,10 @@
       <a href="{{ latest_hoppy.get_absolute_url }}">
         <h4 class="media-heading">{{ latest_hoppy.title }}</h4>
       </a>
-      <p class="lead">{{ latest_hoppy.description }}</p>
-      <p class="lead">{{ latest_hoppy.body_teaser | markdown }}</p>
+      <div class="body_text">
+      <p>{{ latest_hoppy.description }}</p>
+        {{ latest_hoppy.body_teaser | markdown }}
+      </div>
     </div>
   </div>
 </div>

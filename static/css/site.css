@@ -12,6 +12,7 @@
 
 .navbar {
   background-color: #13250e;
+  font-size: 13px;
 }
 
 .navbar-inverse .navbar-nav>li>a {
@@ -205,10 +206,6 @@ h4 a:active {
   font-family: 'Pacifico', cursive;
 }
 
-.media-body p {
-  font-size: 20px;
-}
-
 .gallery-title {
   background-color: white;
 }
@@ -223,7 +220,7 @@ h4 a:active {
 }
 
 .page-header .lead {
-  font-size: 35px;
+  font-size: 30px;
   background-color: #174f17;
   color: white;
   padding-left: 10px;
@@ -297,6 +294,7 @@ footer .img-responsive {
 .featurette-heading {
     background-color: #174f17;
     color: white;
+    font-size: 40px;
 }
 
 .featurette .media-heading {
@@ -309,8 +307,8 @@ footer .img-responsive {
     text-decoration: none;
 }
 
-.feature  .media-body {
-  font-size:
+.feature .media-body {
+  font-size: 20px;
 }
 
 .event_time {
@@ -375,4 +373,8 @@ footer .img-responsive {
 /*strobile*/
 .navbar-brand img {
   margin-top: -5px;
+}
+
+.body_text {
+  font-size: 18px;
 }
