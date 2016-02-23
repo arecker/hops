@@ -361,3 +361,13 @@ footer .img-responsive {
 #donate p {
   font-size: 20px;
 }
+
+/* Calendar Overrides */
+.fc-event-container a {
+    border: 1px solid #174f17;
+}
+
+.fc-content {
+    background-color: #174f17;
+    border: white;
+}
