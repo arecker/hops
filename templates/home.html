@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load thumbnail markdown_deux_tags %}
+{% load thumbnail markdown_deux_tags staticfiles %}
 {% block content %}
 <hr class="top-divider">
 
@@ -49,7 +49,7 @@
 
 <!-- Events -->
 <div class="featurette" id="services">
-  <img class="featurette-image img-circle img-responsive pull-left" src="http://i.imgur.com/0hdcpjt.jpg?1">
+  <img class="featurette-image img-circle img-responsive pull-left" src="{% static 'img/strobile_group.png' %}">
   <h2 class="featurette-heading">Upcoming Events</h2>
   {% for event in latest_events %}
   <div class="media">
