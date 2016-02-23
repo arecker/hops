@@ -1,6 +1,4 @@
-{% extends "base.html" %}
-{% load thumbnail markdown_deux_tags staticfiles %}
-{% block content %}
+{% extends "base.html" %} {% load thumbnail markdown_deux_tags staticfiles %} {% block content %}
 <br>
 
 <div class="row social text-center">
@@ -32,19 +30,18 @@
 <!-- Announcements -->
 <div class="featurette" id="announcements">
   {% thumbnail latest_announcement.image "300x300" crop="center" as im %}
-  <img class="featurette-image img-circle img-responsive pull-right" src="{{ im.url }}">
-  {% endthumbnail %}
+  <img class="featurette-image img-circle img-responsive pull-right" src="{{ im.url }}"> {% endthumbnail %}
   <h2 class="featurette-heading text-right">What's New?</h2>
   <div class="media text-right">
     <div class="media-body">
       <a href="{{ latest_announcement.get_absolute_url }}">
         <h4 class="media-heading">{{ latest_announcement.title }}</h4>
       </a>
-      <div class="body_text">
-        <p>{{ latest_announcement.description }}</p>
-           {{ latest_hoppy.body_teaser | markdown }}
-      </div>
     </div>
+  </div>
+  <div class="body_text text-right">
+    <p>{{ latest_announcement.description }}</p>
+    {{ latest_hoppy.body_teaser | markdown }}
   </div>
 </div>
 
@@ -53,8 +50,7 @@
 <!-- Events -->
 <div class="featurette" id="services">
   <img class="featurette-image img-circle img-responsive pull-left" src="{% static 'img/strobile_group.png' %}">
-  <h2 class="featurette-heading">Upcoming Events</h2>
-  {% for event in latest_events %}
+  <h2 class="featurette-heading">Upcoming Events</h2> {% for event in latest_events %}
   <div class="media">
     <div class="media-body">
       <a href="{{ event.get_absolute_url }}">
@@ -71,8 +67,7 @@
 <!-- Gallery -->
 <div class="featurette" id="announcements">
   {% thumbnail latest_gallery.image "300x300" crop="center" as im %}
-  <img class="featurette-image img-circle img-responsive pull-right" src="{{ im.url }}">
-  {% endthumbnail %}
+  <img class="featurette-image img-circle img-responsive pull-right" src="{{ im.url }}"> {% endthumbnail %}
   <h2 class="featurette-heading text-right">Latest Artists and Exhibits</h2>
   <div class="media text-right">
     <div class="media-body">
@@ -80,8 +75,8 @@
         <h4 class="media-heading">{{ latest_gallery.title }}</h4>
       </a>
       <div class="body_text">
-      <p>{{ latest_gallery.description }}</p>
-          {{ latest_hoppy.body_teaser | markdown }}
+        <p>{{ latest_gallery.description }}</p>
+        {{ latest_hoppy.body_teaser | markdown }}
       </div>
     </div>
   </div>
@@ -89,22 +84,21 @@
 
 <hr class="featurette-divider">
 
-<!-- Gallery -->
+<!-- Hoppy -->
 <div class="featurette">
   {% thumbnail latest_hoppy.image "300x300" crop="center" as im %}
-  <img class="featurette-image img-circle img-responsive pull-left" src="{{ im.url }}">
-  {% endthumbnail %}
+  <img class="featurette-image img-circle img-responsive pull-left" src="{{ im.url }}"> {% endthumbnail %}
   <h2 class="featurette-heading text-left">Where's Hoppy?</h2>
-  <div class="media">
+  <div class="media text-left">
     <div class="media-body">
       <a href="{{ latest_hoppy.get_absolute_url }}">
         <h4 class="media-heading">{{ latest_hoppy.title }}</h4>
       </a>
-      <div class="body_text">
-      <p>{{ latest_hoppy.description }}</p>
-        {{ latest_hoppy.body_teaser | markdown }}
-      </div>
     </div>
+  </div>
+  <div class="body_text">
+    <p>{{ latest_hoppy.description }}</p>
+    {{ latest_hoppy.body_teaser | markdown }}
   </div>
 </div>
 

@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
   <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon" /> {% block meta %}
   <title>The Hops Museum</title>
   <meta property="og:title" content="The Hops Museum" />
@@ -77,7 +78,7 @@
   </nav>
 
   <div class="row">
-    <div class="col-md-10 col-md-offset-1">
+    <div class="col-md-10 col-md-offset-1 col-xs-12">
       <br>
       <form class="search-container" action="{% url 'search' %}" method="POST"> {% csrf_token %}
         <input id="search-box" name="term" type="text" class="search-box" />

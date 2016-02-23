@@ -108,7 +108,7 @@ a:hover, .navbar-default .navbar-nav > li > a:focus {
 }
 
 .search-container {
-  padding-left: 75px;
+  padding-left: 60px;
 }
 
 /* Social Buttons */
@@ -378,3 +378,14 @@ footer .img-responsive {
 .body_text {
   font-size: 18px;
 }
+
+.media-heading {
+  line-height: 30px;
+}
+
+ /*Extra Small Devices, Phones */
+ @media screen and (max-width : 480px) {
+   .search-container {
+     padding-left: 10px;
+   }
+ }
