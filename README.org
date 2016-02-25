@@ -1,5 +1,0 @@
-#+TITLE: Hops
-#+STARTUP: hidestars indent
-#+OPTIONS: toc:nil num:nil
-
-Official Website of the Hops Museum
