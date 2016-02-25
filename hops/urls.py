@@ -38,6 +38,10 @@ urlpatterns = [url(r'^admin/', admin.site.urls),
                    views.GiveView.as_view(),
                    name='give'),
 
+               url(r'^thanks/$',
+                   views.ThanksView.as_view(),
+                   name='thanks'),
+
                url(r'^events/$',
                    views.CalendarView.as_view(),
                    name='events-list'),

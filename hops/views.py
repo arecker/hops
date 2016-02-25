@@ -108,6 +108,10 @@ class GiveView(TemplateView):
         return ctx
 
 
+class ThanksView(TemplateView):
+    template_name = 'thanks.html'
+
+
 class CalendarView(TemplateView):
     template_name = 'calendar.html'
 
