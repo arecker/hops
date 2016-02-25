@@ -4,10 +4,14 @@ from content.models import Partner
 
 
 def settings(request):
-    return {'CURATOR_EMAIL': django_settings.CURATOR_EMAIL,
-            'DEBUG': django_settings.DEBUG,
-            'DOMAIN': django_settings.DOMAIN,
-            'GITHUB_LINK': django_settings.GITHUB_LINK}
+    ctx = {}
+
+    constants = ('CURATOR_EMAIL', 'DEBUG', 'DOMAIN', 'GITHUB_LINK', 'WIKI_LINK')
+
+    for k in constants:
+        ctx[k] = getattr(django_settings, k, None)
+
+    return ctx
 
 
 def advertisement(request):

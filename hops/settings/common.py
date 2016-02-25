@@ -69,3 +69,4 @@ STATIC_URL = '/static/'
 
 DOMAIN = 'thehopsmuseum.org'  # no trailing slash or protocol
 GITHUB_LINK = 'https://github.com/arecker/hops'
+WIKI_LINK = 'http://wiki.hopsmuseum.org'
