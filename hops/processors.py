@@ -6,7 +6,8 @@ from content.models import Partner
 def settings(request):
     return {'CURATOR_EMAIL': django_settings.CURATOR_EMAIL,
             'DEBUG': django_settings.DEBUG,
-            'DOMAIN': django_settings.DOMAIN}
+            'DOMAIN': django_settings.DOMAIN,
+            'GITHUB_LINK': django_settings.GITHUB_LINK}
 
 
 def advertisement(request):
