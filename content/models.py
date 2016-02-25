@@ -1,11 +1,11 @@
-from uuid import uuid4
-
 from django.db import models
 from django.db.models import Q
 from django.core.urlresolvers import reverse
 from django.core.exceptions import ValidationError
 from django.utils import timezone
 from sorl.thumbnail import ImageField
+
+from hops.utils import generate_uuid_pk
 
 
 def search(term):
@@ -25,13 +25,10 @@ class UpdateBaseQueryset(models.QuerySet):
                            Q(description__contains=term))
 
 
-class UpdateBase(models.Model):
+class BaseModel(models.Model):
     objects = UpdateBaseQueryset.as_manager()
 
-    id = models.UUIDField(primary_key=True,
-                          default=uuid4,
-                          unique=True,
-                          editable=False)
+    id = generate_uuid_pk()
 
     date = models.DateField()
     title = models.CharField(max_length=120)
@@ -52,7 +49,7 @@ class UpdateBase(models.Model):
         abstract = True
 
 
-class HoppyUpdate(UpdateBase):
+class HoppyUpdate(BaseModel):
     image = ImageField(blank=True,
                        upload_to='hoppy_updates/')
 
@@ -66,7 +63,7 @@ class HoppyUpdate(UpdateBase):
         get_latest_by = 'date'
 
 
-class Announcement(UpdateBase):
+class Announcement(BaseModel):
     image = ImageField(blank=True,
                        upload_to='announcements/')
 
@@ -79,7 +76,7 @@ class Announcement(UpdateBase):
         get_latest_by = 'date'
 
 
-class Gallery(UpdateBase):
+class Gallery(BaseModel):
     image = ImageField(blank=True,
                        upload_to='gallery_covers',
                        verbose_name='Cover Image')
@@ -116,6 +113,8 @@ class PartnerQuerySet(models.QuerySet):
 class Partner(models.Model):
     objects = PartnerQuerySet.as_manager()
 
+    id = generate_uuid_pk()
+
     name = models.CharField(max_length=120, blank=True, null=True)
     image = ImageField(upload_to='banner_ads', blank=True, null=True)
     link = models.URLField(blank=True, null=True)
@@ -134,6 +133,7 @@ class Partner(models.Model):
 
 
 class NewspaperArchive(models.Model):
+    id = generate_uuid_pk()
     title = models.CharField(max_length=120)
     slug = models.SlugField(unique=True)
     date = models.DateField(default=timezone.now)
@@ -159,10 +159,7 @@ class EventQuerySet(models.QuerySet):
 class Event(models.Model):
     objects = EventQuerySet.as_manager()
 
-    id = models.UUIDField(primary_key=True,
-                          unique=True,
-                          default=uuid4,
-                          editable=False)
+    id = generate_uuid_pk()
 
     start = models.DateTimeField()
     end = models.DateTimeField(blank=True, null=True)
