@@ -36,15 +36,15 @@ class PackageInstaller(object):
 class SourcePusha(object):
     def __init__(self):
         self.config = Config()
-        self.payload = os.path.dirname(self.config.get('cur_dir'))
+        self.payload = self.config.get('cur_dir')
         self.payload = os.path.join(self.payload, '')
         self.target = self.config.get('src_path')
         self.target = os.path.join(self.target, '')
 
     def run(self):
         run('mkdir -p {}'.format(os.path.dirname(self.target)))
-        excludes = ('.git', 'temp', 'deployment',
-                    'uploads', '*.pyc')
+        excludes = ('.git', 'temp', 'configs',
+                    'uploads', '*.pyc', 'fabfile.py', 'secrets.yml')
         rsync_project(local_dir=self.payload,
                       remote_dir=self.target,
                       exclude=excludes,
