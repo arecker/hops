@@ -1,6 +1,6 @@
 from django.conf import settings as django_settings
 
-from content.models import BannerAdvertisement
+from content.models import Partner
 
 
 def settings(request):
@@ -10,7 +10,7 @@ def settings(request):
 
 
 def advertisement(request):
-    return {'ad': BannerAdvertisement.objects.pluck()}
+    return {'ad': Partner.objects.pluck()}
 
 
 def path(request):

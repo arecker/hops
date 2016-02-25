@@ -12,6 +12,7 @@ from content.models import (HoppyUpdate,
                             Gallery,
                             NewspaperArchive,
                             Event,
+                            Partner,
                             search)
 
 
@@ -100,6 +101,11 @@ class SearchView(View):
 
 class GiveView(TemplateView):
     template_name = 'give.html'
+
+    def get_context_data(self, *args, **kwargs):
+        ctx = super(GiveView, self).get_context_data(*args, **kwargs)
+        ctx['partners'] = Partner.objects.credits()
+        return ctx
 
 
 class CalendarView(TemplateView):

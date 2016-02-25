@@ -7,7 +7,7 @@ from content.models import (HoppyUpdate,
                             Announcement,
                             Gallery,
                             GalleryImage,
-                            BannerAdvertisement,
+                            Partner,
                             NewspaperArchive,
                             Event)
 
@@ -63,9 +63,11 @@ class GalleryAdmin(AdminImageMixin, admin.ModelAdmin):
         exclude = ()
 
 
-class BannerAdvertisementAdmin(AdminImageMixin, admin.ModelAdmin):
+class PartnerAdmin(AdminImageMixin, admin.ModelAdmin):
+    list_display = ('name', 'link')
+
     class Meta:
-        model = BannerAdvertisement
+        model = Partner
         exclude = ()
 
 
@@ -89,6 +91,6 @@ class EventAdmin(admin.ModelAdmin):
 admin.site.register(HoppyUpdate, HoppyUpdateAdmin)
 admin.site.register(Announcement, AnnouncementAdmin)
 admin.site.register(Gallery, GalleryAdmin)
-admin.site.register(BannerAdvertisement, BannerAdvertisementAdmin)
+admin.site.register(Partner, PartnerAdmin)
 admin.site.register(NewspaperArchive, NewspaperArchiveAdmin)
 admin.site.register(Event, EventAdmin)

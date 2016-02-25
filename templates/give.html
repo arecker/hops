@@ -16,6 +16,20 @@
     our community, so let us know what you'd like to see.
   </p>
 
+  {% if partners %}
+  <h2>Our Partners our Awesome!</h2>
+  <p>We'd like to thank these people for their partnership with the Hops Museum</p>
+  <ul >
+    {% for partner in partners %}
+    {% if partner.link %}
+    <li><a href="{{ partner.link }}">{{ partner.name }}</a></li>
+    {% else %}
+    <li>{{ partner.name }}</li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+  {% endif %}
+
   <p>
     <strong>TODO:</strong> add paypal or square links here
   </p>

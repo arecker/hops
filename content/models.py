@@ -102,26 +102,35 @@ class GalleryImage(models.Model):
         return self.image.file.name
 
 
-class BannerAdvertisementQuerySet(models.QuerySet):
+class PartnerQuerySet(models.QuerySet):
     def pluck(self):
         try:
-            return self.order_by('?').first()
+            return self.filter(in_ads=True).order_by('?').first()
         except self.model.DoesNotExist:
             return None
 
+    def credits(self):
+        return self.filter(in_credits=True)
 
-class BannerAdvertisement(models.Model):
-    objects = BannerAdvertisementQuerySet.as_manager()
 
-    image = ImageField(upload_to='banner_ads')
+class Partner(models.Model):
+    objects = PartnerQuerySet.as_manager()
+
+    name = models.CharField(max_length=120, blank=True, null=True)
+    image = ImageField(upload_to='banner_ads', blank=True, null=True)
     link = models.URLField(blank=True, null=True)
 
-    def __unicode__(self):
-        return self.image.file.name
+    in_credits = models.BooleanField(default=False, verbose_name='include in credits')
+    in_ads = models.BooleanField(default=False, verbose_name='include in banner ads')
 
-    class Meta:
-        verbose_name = 'Banner Ad'
-        verbose_name_plural = 'Banner Ads'
+    def clean(self):
+        if not self.image and self.in_ads:
+            raise ValidationError('needs an image to be included in banner ads')
+        if not self.name and self.in_credits:
+            raise ValidationError('needs name to be included in credits')
+
+    def __unicode__(self):
+        return self.name or '(no name)'
 
 
 class NewspaperArchive(models.Model):
