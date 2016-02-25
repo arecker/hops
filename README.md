@@ -21,7 +21,6 @@ have access to the admin panel
 
     (hops) $ cd ~/git/hops/
     (hops) $ python manage.py migrate
-        ... (output)
     (hops) $ python manage.py createsuperuser
 
 Start the site locally
@@ -29,3 +28,18 @@ Start the site locally
     (hops) $ python manage.py runserver
 
 You should now be able to access the site from http://127.0.0.1:8000
+
+## Contributing
+
+For a list of outstanding bugs or features not yet implemented, be
+sure to check the
+[issue tracker](https://github.com/arecker/hops/issues).
+
+### Commits
+
+- Avoid junk merge commits in your pull request by rebasing off of
+  recent `master`
+- Write your commit messages in _present_ tense, noting which feature
+  it pertains to
+- Include the key phrase "fixes #NN" so the issue tracker can
+  associate your work with a logged issue
