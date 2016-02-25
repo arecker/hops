@@ -1,6 +1,9 @@
 # hops
 
-Official Website of the Hops Museum - [thehopsmuseum.org](http://thehopsmuseum.org)
+Official Website of the Hops Museum -
+[thehopsmuseum.org](http://thehopsmuseum.org)
+
+![](./static/img/logo.png)
 
 ## Building
 
