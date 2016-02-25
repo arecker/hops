@@ -46,3 +46,14 @@ sure to check the
   it pertains to
 - Include the key phrase "fixes #NN" so the issue tracker can
   associate your work with a logged issue
+
+## Deploying
+
+Do deploy the project, install the needed deployment requirements
+
+    (hops) $ pip install -r requirements/deployment.txt
+
+Update `secrets.yml` to your pleasure, then run the fabric script,
+supplying an ssh host.
+
+    (hops) $ fab deploy -H your_host
