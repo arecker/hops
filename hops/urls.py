@@ -3,6 +3,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
+from django.views.generic import TemplateView
 
 from hops import views
 from hops.sitemap import SITEMAPS
@@ -58,6 +59,10 @@ urlpatterns = [url(r'^admin/', admin.site.urls),
 
                url(r'^sitemap\.xml$', sitemap, {'sitemaps': SITEMAPS},
                    name='django.contrib.sitemaps.views.sitemap'),
+
+               url(r'^robots\.txt$',
+                   TemplateView.as_view(template_name='robots.txt',
+                                        content_type='text/plain')),
 
                url(r'^$', views.HomeView.as_view(), name='home')]
 
