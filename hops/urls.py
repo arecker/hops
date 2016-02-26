@@ -2,8 +2,10 @@ from django.conf.urls import url
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap
 
 from hops import views
+from hops.sitemap import SITEMAPS
 
 
 urlpatterns = [url(r'^admin/', admin.site.urls),
@@ -53,6 +55,9 @@ urlpatterns = [url(r'^admin/', admin.site.urls),
                url(r'^search/$', views.SearchView.as_view(), name='search'),
 
                url(r'^api/events/$', views.events, name='api-events'),
+
+               url(r'^sitemap\.xml$', sitemap, {'sitemaps': SITEMAPS},
+                   name='django.contrib.sitemaps.views.sitemap'),
 
                url(r'^$', views.HomeView.as_view(), name='home')]
 
