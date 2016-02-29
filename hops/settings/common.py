@@ -82,3 +82,4 @@ DOMAIN = 'thehopsmuseum.org'  # no trailing slash or protocol
 GITHUB_LINK = 'https://github.com/arecker/hops'
 WIKI_LINK = 'http://wiki.hopsmuseum.org'
 CURATOR_EMAIL = 'erin@thehopsmuseum.org '
+NON_PROFIT_ID = ''

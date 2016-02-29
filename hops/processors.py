@@ -6,7 +6,8 @@ from content.models import Partner
 def settings(request):
     ctx = {}
 
-    constants = ('CURATOR_EMAIL', 'DEBUG', 'DOMAIN', 'GITHUB_LINK', 'WIKI_LINK')
+    constants = ('CURATOR_EMAIL', 'DEBUG', 'DOMAIN',
+                 'GITHUB_LINK', 'WIKI_LINK', 'NON_PROFIT_ID')
 
     for k in constants:
         ctx[k] = getattr(django_settings, k, None)
