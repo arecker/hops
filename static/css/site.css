@@ -317,8 +317,9 @@ footer .img-responsive {
   font-size: 20px;
 }
 
-.twitter-share-button[style] { /* hack needed to align share buttons */
-    vertical-align: text-bottom !important; /* http://goo.gl/Ua8Mim */
+.fb-share-button {
+  position: relative;
+  top: -5.5px;
 }
 
 .well {
