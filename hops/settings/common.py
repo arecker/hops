@@ -81,7 +81,11 @@ ADMIN_MEDIA_PREFIX = '/media/'
 STATIC_URL = '/static/'
 
 DOMAIN = 'thehopsmuseum.org'  # no trailing slash or protocol
-GITHUB_LINK = 'https://github.com/arecker/hops'
-WIKI_LINK = 'http://hopswiki.reckerdesign.com'
 CURATOR_EMAIL = 'erin@thehopsmuseum.org '
 NON_PROFIT_ID = '47-2358924'
+WIKI_URL = 'http://hopswiki.reckerdesign.com'
+GOOGLE_MAPS_URL = 'https://goo.gl/maps/D26D9jLa5iF2'
+FACEBOOK_URL = 'https://www.facebook.com/thehopsmuseum/'
+TWITTER_URL = 'https://twitter.com/thehopsmuseum'
+INSTAGRAM_URL = 'https://www.instagram.com/thehopsmuseum/'
+GITHUB_URL = 'https://github.com/arecker/hops'

@@ -66,7 +66,7 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li id="giveLink"><a href="{% url 'give' %}"><i class="fa fa-heart"></i>&nbsp Giving</a></li>
-          <li><a href="{{ WIKI_LINK }}"><i class="fa fa-globe"></i>&nbsp Wiki</a></li>
+          <li><a href="{{ WIKI_URL }}"><i class="fa fa-globe"></i>&nbsp Wiki</a></li>
           {% if user.is_superuser %}
           <li><a href="{% url 'admin:index' %}">Admin</a></li>
           {% endif %}
