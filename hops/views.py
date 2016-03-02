@@ -6,6 +6,7 @@ from django.shortcuts import (render,
                               render_to_response,
                               RequestContext)
 from django.http import JsonResponse
+from django.utils.timezone import localtime
 
 from content.models import (HoppyUpdate,
                             Announcement,
@@ -127,7 +128,7 @@ def events(request):
     events = [{'id': e.id,
                'title': e.title,
                'url': e.get_absolute_url(),
-               'start': e.start,
-               'end': e.end} for e in qs]
+               'start': localtime(e.start),
+               'end': localtime(e.end)} for e in qs]
 
     return JsonResponse(events, safe=False)
