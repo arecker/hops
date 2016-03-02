@@ -2,10 +2,6 @@
   font-family: 'Roboto Slab', serif;
 }
 
-.pacifico {
-  font-family: 'Pacifico', cursive;
-}
-
 .main {
     margin-bottom: 3em;
 }
@@ -109,6 +105,12 @@ a:hover, .navbar-default .navbar-nav > li > a:focus {
 .search-container {
   padding-left: 60px;
 }
+
+
+.statement-small {
+  text-align: center;
+}
+
 
 /* Social Buttons */
 .social a:hover {

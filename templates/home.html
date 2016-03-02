@@ -1,6 +1,15 @@
 {% extends "base.html" %} {% load thumbnail markdown_deux_tags staticfiles %} {% block content %}
 <br>
 
+<div class="statement-small">
+  <div class="col-md-4 col-md-offset-4">
+    <p> <em> Open Thursday and Friday 4-8 and Saturday 12-8
+      <br> 2617 E. Washington Ave Madison, WI
+      <br> (608) 618-3746 </em> </p>
+    <br>
+  </div>
+</div>
+
 <div class="row social text-center">
   <div class="col-md-4 col-md-offset-4">
     <a href="https://www.facebook.com/thehopsmuseum/" title="facebook" target="_blank">
@@ -24,17 +33,12 @@
   </div>
 </div>
 
-<br>
-<br>
 
 <!-- Announcements -->
 <div class="featurette" id="announcements">
-  {% if latest_announcement.image %}
-  {% thumbnail latest_announcement.image "300x300" crop="center" as im %}
-  <img class="featurette-image img-circle img-responsive pull-right" src="{{ im.url }}"> {% endthumbnail %}
-  {% else %}
-  <img class="featurette-image img-circle img-responsive pull-right" src="{% static 'img/strobile_group.png' %}">
-  {% endif %}
+  {% if latest_announcement.image %} {% thumbnail latest_announcement.image "300x300" crop="center" as im %}
+  <img class="featurette-image img-circle img-responsive pull-right" src="{{ im.url }}"> {% endthumbnail %} {% else %}
+  <img class="featurette-image img-circle img-responsive pull-right" src="{% static 'img/strobile_group.png' %}"> {% endif %}
   <h2 class="featurette-heading text-right">What's New?</h2>
   <div class="media text-right">
     <div class="media-body">
@@ -53,14 +57,9 @@
 
 <!-- Events -->
 <div class="featurette" id="services">
-  {% with latest_events|first as latest_event %}
-  {% if latest_event.image %}
-  {% thumbnail latest_event.image "300x300" crop="center" as im %}
-  <img class="featurette-image img-circle img-responsive pull-left" src="{{ im.url }}"> {% endthumbnail %}
-  {% else %}
-  <img class="featurette-image img-circle img-responsive pull-left" src="{% static 'img/strobile_group.png' %}">
-  {% endif %}
-  {% endwith %}
+  {% with latest_events|first as latest_event %} {% if latest_event.image %} {% thumbnail latest_event.image "300x300" crop="center" as im %}
+  <img class="featurette-image img-circle img-responsive pull-left" src="{{ im.url }}"> {% endthumbnail %} {% else %}
+  <img class="featurette-image img-circle img-responsive pull-left" src="{% static 'img/strobile_group.png' %}"> {% endif %} {% endwith %}
   <h2 class="featurette-heading">Upcoming Events</h2> {% for event in latest_events %}
   <div class="media">
     <div class="media-body">
@@ -77,12 +76,9 @@
 
 <!-- Gallery -->
 <div class="featurette" id="announcements">
-  {% if latest_gallery.image %}
-  {% thumbnail latest_gallery.image "300x300" crop="center" as im %}
-  <img class="featurette-image img-circle img-responsive pull-right" src="{{ im.url }}"> {% endthumbnail %}
-  {% else %}
-  <img class="featurette-image img-circle img-responsive pull-right" src="{% static 'img/strobile_group.png' %}">
-  {% endif %}
+  {% if latest_gallery.image %} {% thumbnail latest_gallery.image "300x300" crop="center" as im %}
+  <img class="featurette-image img-circle img-responsive pull-right" src="{{ im.url }}"> {% endthumbnail %} {% else %}
+  <img class="featurette-image img-circle img-responsive pull-right" src="{% static 'img/strobile_group.png' %}"> {% endif %}
   <h2 class="featurette-heading text-right">Latest Artists and Exhibits</h2>
   <div class="media text-right">
     <div class="media-body">
@@ -101,12 +97,9 @@
 
 <!-- Hoppy -->
 <div class="featurette">
-  {% if latest_hoppy.image %}
-  {% thumbnail latest_hoppy.image "300x300" crop="center" as im %}
-  <img class="featurette-image img-circle img-responsive pull-left" src="{{ im.url }}"> {% endthumbnail %}
-  {% else %}
-  <img class="featurette-image img-circle img-responsive pull-left" src="{% static 'img/strobile_group.png' %}">
-  {% endif %}
+  {% if latest_hoppy.image %} {% thumbnail latest_hoppy.image "300x300" crop="center" as im %}
+  <img class="featurette-image img-circle img-responsive pull-left" src="{{ im.url }}"> {% endthumbnail %} {% else %}
+  <img class="featurette-image img-circle img-responsive pull-left" src="{% static 'img/strobile_group.png' %}"> {% endif %}
   <h2 class="featurette-heading text-left">Where's Hoppy?</h2>
   <div class="media text-left">
     <div class="media-body">
