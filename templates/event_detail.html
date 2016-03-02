@@ -14,9 +14,9 @@
     <h2 class="lead">{{ object.title }}
     </h2>
     {% if object.end %}
-    <p class="event_time">{{ object.start | date:"M d P" }} - {{ object.end | date:"P" }}</p>
+    <p class="event_time">{{ object.start | date:"M d, P" }} - {{ object.end | date:"P" }}</p>
     {% else %}
-    <p class="event_time">{{ object.start | date:"M d P" }}</p>
+    <p class="event_time">{{ object.start | date:"M d, P" }}</p>
     {% endif %}
     <p class="body">{{ object.description }}</p>
     {% include "partials/share.html" %}
