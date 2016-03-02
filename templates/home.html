@@ -47,10 +47,10 @@
       </a>
     </div>
   </div>
-  <div class="body_text text-right">
+  <div class="body_text text-right">{% if latest_announcement %}
     <p>{{ latest_announcement.description }}</p>
-    <!-- {{ latest_announcement.body_teaser | markdown }} -->
-  </div>
+    <p><a href="{{ latest_announcement.get_absolute_url }}">Read more...</a></p>
+  </div>{% endif %}
 </div>
 
 <hr class="featurette-divider">
@@ -68,8 +68,7 @@
       </a>
       <p class="body_text">{{ event.description }}</p>
     </div>
-  </div>
-  {% endfor %}
+  </div>{% endfor %}
 </div>
 
 <hr class="featurette-divider">
@@ -85,10 +84,10 @@
       <a href="{{ latest_gallery.get_absolute_url }}">
         <h4 class="media-heading">{{ latest_gallery.title }}</h4>
       </a>
-      <div class="body_text">
+      <div class="body_text">{% if latest_gallery %}
         <p>{{ latest_gallery.description }}</p>
-        <!-- {{ latest_gallery.body_teaser | markdown }} -->
-      </div>
+        <p><a href="{{ latest_gallery.get_absolute_url }}">Read more...</a></p>
+      </div>{% endif %}
     </div>
   </div>
 </div>
@@ -108,10 +107,10 @@
       </a>
     </div>
   </div>
-  <div class="body_text">
+  <div class="body_text">{% if latest_hoppy %}
     <p>{{ latest_hoppy.description }}</p>
-    <!-- {{ latest_hoppy.body_teaser | markdown }} -->
-  </div>
+    <p><a href="{{ latest_hoppy.get_absolute_url }}">Read more...</a></p>
+  </div>{% endif %}
 </div>
 
 <hr class="featurette-divider">
