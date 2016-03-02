@@ -50,7 +50,6 @@ a:hover, .navbar-default .navbar-nav > li > a:focus {
   color: #330000;
   display: block;
   margin: auto;
-  font-family: 'Pacifico', cursive;
 }
 
 /*Search Bar*/
@@ -155,47 +154,40 @@ h2 {
 h2 a:link {
   background-color: white;
   color: #330000;
-  font-family: 'Pacifico', cursive;
 }
 
 h2 a:visited {
   background-color: white;
   color: #330000;
-  font-family: 'Pacifico', cursive;
 }
 
 h2 a:hover {
   background-color: white;
   color: #174f17;
-  font-family: 'Pacifico', cursive;
   text-decoration: none;
 }
 
 h2 a:active {
   background-color: white;
   color: #330000;
-  font-family: 'Pacifico', cursive;
 }
 
 h4 a:link {
   font-size: 20px;
   background-color: white;
   color: #330000;
-  font-family: 'Pacifico', cursive;
 }
 
 h4 a:visited {
   font-size: 20px;
   background-color: white;
   color: #330000;
-  font-family: 'Pacifico', cursive;
 }
 
 h4 a:hover {
   font-size: 20px;
   background-color: white;
   color: #174f17;
-  font-family: 'Pacifico', cursive;
   text-decoration: none;
 }
 
@@ -203,7 +195,6 @@ h4 a:active {
   font-size: 20px;
   background-color: white;
   color: #330000;
-  font-family: 'Pacifico', cursive;
 }
 
 .gallery-title {
@@ -238,7 +229,6 @@ h4 a:active {
 .detail {
   font-size: 25px;
   color: #330000;
-  font-family: 'Pacifico', cursive;
 }
 
 .body {
@@ -251,7 +241,6 @@ footer .img-responsive {
 
 .artist_title {
   color: #330000;
-  font-family: 'Pacifico', cursive;
 }
 
 .caption a:hover {
@@ -299,7 +288,6 @@ footer .img-responsive {
 
 .featurette .media-heading {
     color: #330000;
-    font-family: 'Pacifico', cursive;
     font-size: 25px;
 }
 
@@ -313,7 +301,6 @@ footer .img-responsive {
 
 .event_time {
   color: #330000;
-  font-family: 'Pacifico', cursive;
   font-size: 20px;
 }
 
@@ -328,7 +315,6 @@ footer .img-responsive {
 
 .fc-center h2 {
   color: #330000;
-  font-family: 'Pacifico', cursive;
   font-size: 40px;
   background-color: white;
 }
@@ -352,7 +338,6 @@ footer .img-responsive {
 
 #donate h2 {
   color: #330000;
-  font-family: 'Pacifico', cursive;
   font-size: 25px;
   background-color: white;
 }
