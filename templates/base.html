@@ -122,7 +122,7 @@
               {% thumbnail ad.image "700x100" crop="center" as im %}
               <img src="{{ im.url }}" class="img-responsive">
               {% endthumbnail %}
-            </a> {% else %} {% thumbnail ad.image "700x100" crop="center" as im %}
+            </a> {% else %} {% thumbnail ad.image "700x200" crop="center" as im %}
         <img class="img-responsive" src="{{ im.url }}" class="img-responsive"> {% endthumbnail %} {% endif %}
       </div>
       {% endif %}
