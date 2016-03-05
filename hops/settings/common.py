@@ -90,3 +90,5 @@ TWITTER_URL = 'https://twitter.com/thehopsmuseum'
 INSTAGRAM_URL = 'https://www.instagram.com/thehopsmuseum/'
 GITHUB_URL = 'https://github.com/arecker/hops'
 GOOGLE_ANALYTICS_ID = 'UA-42540208-11'
+
+VERSION = 'v1.0.2'

@@ -9,7 +9,7 @@ def settings(request):
     constants = ('CURATOR_EMAIL', 'DEBUG', 'DOMAIN',
                  'GITHUB_URL', 'WIKI_URL', 'NON_PROFIT_ID',
                  'FACEBOOK_URL', 'GOOGLE_MAPS_URL', 'INSTAGRAM_URL',
-                 'TWITTER_URL')
+                 'TWITTER_URL', 'VERSION')
 
     for k in constants:
         ctx[k] = getattr(django_settings, k, None)
