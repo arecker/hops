@@ -147,7 +147,7 @@ class EventQuerySet(models.QuerySet):
         today = timezone.now()
         next_week = today + timezone.timedelta(weeks=1)
         return self.filter(start__gte=today,
-                           start__lte=next_week)
+                           start__lte=next_week).order_by('start')
 
 
 class Event(models.Model):
