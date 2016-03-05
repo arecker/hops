@@ -21,8 +21,8 @@ def search(term):
 
 class UpdateBaseQueryset(models.QuerySet):
     def filter_by_searchable_fields(self, term):
-        return self.filter(Q(title__contains=term) |
-                           Q(description__contains=term))
+        return self.filter(Q(title__icontains=term) |
+                           Q(description__icontains=term))
 
 
 class BaseModel(models.Model):
