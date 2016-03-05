@@ -65,6 +65,7 @@
           <li id="hoppyLink"><a href="{% url 'hoppy-list' %}">Hoppy</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
+          <li><a href="#" data-toggle="modal" data-target="#contactModal"><i class="fa fa-envelope"></i> Email Us</a></li>
           <li id="giveLink"><a href="{% url 'give' %}"><i class="fa fa-heart"></i>&nbsp Giving</a></li>
           <li><a href="{{ WIKI_URL }}"><i class="fa fa-globe"></i>&nbsp Wiki</a></li>
           {% if user.is_superuser %}
@@ -133,6 +134,31 @@
     </div>
     </div>
   </footer>
+
+  <!-- Modal -->
+  <div class="modal fade" id="contactModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Email Us</h4>
+        </div>
+        <div class="modal-body">
+          <p class="lead">We want to hear from you!</p>
+          <p>
+            Got an idea for an event?  Want to use the space for something?
+            Want to connect to other hop lovers in the community?
+          </p>
+          <p>
+            Send our curator an email!
+          </p>
+          <p>
+            <a class="btn btn-lg btn-success" href="mailto:{{ CURATOR_EMAIL }}"><i class="fa fa-envelope"></i> Email Us</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   {% block active_link %}
   <input id="activeLink" type="hidden" value="homeLink" /> {% endblock %} {% compress js %}
