@@ -1,6 +1,11 @@
 {% extends "base.html" %}
-{% load thumbnail %}
+{% load thumbnail staticfiles %}
 {% block content %}
+
+<div class="row">
+  {% include "partials/header_small.html" %}
+</div>
+
 <div class="page-header">
   <h1 class="lead" id="artists">Artist Galleries & Exhibits</h1>
 </div>

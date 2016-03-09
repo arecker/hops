@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load thumbnail markdown_deux_tags %}
+{% load thumbnail markdown_deux_tags staticfiles %}
 
 {% block meta %}
 {% include "partials/detail_meta.html" with object=object %}
@@ -7,7 +7,9 @@
 
 {% block content %}
 
-<hr class="featurette-divider">
+<div class="row">
+  {% include "partials/header_small.html" %}
+</div>
 
 <div class="col-md-10 col-md-offset-1">
   <div class="featurette" id="hoppyupdate_detail">

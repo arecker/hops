@@ -377,3 +377,7 @@ footer .img-responsive {
      padding-left: 10px;
    }
  }
+
+ a.map-link {
+   color: #008000;
+ }

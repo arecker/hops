@@ -1,6 +1,10 @@
 {% extends "base.html" %} {% load thumbnail staticfiles %} {% block content %}
 
 <div class="row">
+  {% include "partials/header_small.html" %}
+</div>
+
+<div class="row">
   <div class="col-md-6 col-md-offset-3">
     <div class="alert alert-success text-center" role="alert"> Want to help with hoppy? Email us at
       <a href="mailto:{{ CURATOR_EMAIL }}" class="alert-link">{{ CURATOR_EMAIL }}</a>
@@ -11,7 +15,7 @@
 <div class="featurette" id="hoppyupdate_detail">
   <img class="featurette-image img-circle img-responsive pull-left" src="{% static 'img/cowboyhoppy.png' %}" />
   <h2 class="lead"> Who is Hoppy?</h2>
-  <p class="body"> Hopy is our mascot! She helps us go around town teaching everyone about hops and the Hops Museum. 
+  <p class="body"> Hopy is our mascot! She helps us go around town teaching everyone about hops and the Hops Museum.
   </div>
 
 <div class="row">

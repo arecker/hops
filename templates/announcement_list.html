@@ -1,4 +1,8 @@
-{% extends "base.html" %} {% load thumbnail %} {% block content %}
+{% extends "base.html" %} {% load thumbnail staticfiles %} {% block content %}
+
+<div class="row">
+  {% include "partials/header_small.html" %}
+</div>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
