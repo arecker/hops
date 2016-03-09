@@ -79,7 +79,16 @@ class NewspaperArchiveAdmin(admin.ModelAdmin):
         exclude = ()
 
 
+class EventAdminForm(forms.ModelForm):
+    description = forms.CharField(widget=AdminPagedownWidget())
+
+    class Meta:
+        model = Event
+        exclude = ()
+
+
 class EventAdmin(admin.ModelAdmin):
+    form = EventAdminForm
     list_display = ('title', 'start', 'end')
     prepopulated_fields = {'slug': ['title']}
 

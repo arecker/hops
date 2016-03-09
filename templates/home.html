@@ -66,7 +66,7 @@
       <a href="{{ event.get_absolute_url }}">
         <h4 class="media-heading">{{ event.title }}</h4>
       </a>
-      <p class="body_text">{{ event.description }}</p>
+      <p class="body_text">{{ event.description | markdown }}</p>
     </div>
   </div>{% endfor %}
 </div>

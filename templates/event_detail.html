@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load thumbnail %}
+{% load thumbnail markdown_deux_tags %}
 {% block meta %}
 {% include "partials/detail_meta.html" with object=object %}
 {% endblock %}
@@ -18,7 +18,7 @@
     {% else %}
     <p class="event_time">{{ object.start | date:"M d, P" }}</p>
     {% endif %}
-    <p class="body">{{ object.description }}</p>
+    <p class="body">{{ object.description | markdown }}</p>
     {% include "partials/share.html" %}
     <hr>
     <div class="row">
