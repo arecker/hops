@@ -81,8 +81,7 @@ ADMIN_MEDIA_PREFIX = '/media/'
 STATIC_URL = '/static/'
 
 DOMAIN = 'thehopsmuseum.org'  # no trailing slash or protocol
-# CURATOR_EMAIL = 'erin@thehopsmuseum.org '
-CURATOR_EMAIL = 'emcwalter@mac.com '
+CURATOR_EMAIL = 'erin@thehopsmuseum.org '
 NON_PROFIT_ID = '47-2358924'
 WIKI_URL = 'http://wiki.thehopsmuseum.org'
 GOOGLE_MAPS_URL='http://maps.apple.com/?q=Hops+Museum'
