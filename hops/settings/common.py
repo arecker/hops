@@ -88,7 +88,7 @@ WIKI_URL = 'http://wiki.thehopsmuseum.org'
 GOOGLE_MAPS_URL = 'https://goo.gl/maps/D26D9jLa5iF2'
 FACEBOOK_URL = 'https://www.facebook.com/thehopsmuseum/'
 TWITTER_URL = 'https://twitter.com/thehopsmuseum'
-INSTAGRAM_URL = 'https://www.instagram.com/thehopsmuseum/'
+INSTAGRAM_URL = 'https://www.instagram.com/behoppytime/'
 GITHUB_URL = 'https://github.com/arecker/hops'
 GOOGLE_ANALYTICS_ID = 'UA-42540208-11'
 
