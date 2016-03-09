@@ -91,4 +91,4 @@ INSTAGRAM_URL = 'https://www.instagram.com/behoppytime/'
 GITHUB_URL = 'https://github.com/arecker/hops'
 GOOGLE_ANALYTICS_ID = 'UA-42540208-11'
 
-VERSION = 'v1.0.5'
+VERSION = 'v1.0.6'
