@@ -85,11 +85,11 @@ DOMAIN = 'thehopsmuseum.org'  # no trailing slash or protocol
 CURATOR_EMAIL = 'emcwalter@mac.com '
 NON_PROFIT_ID = '47-2358924'
 WIKI_URL = 'http://wiki.thehopsmuseum.org'
-GOOGLE_MAPS_URL = 'https://goo.gl/maps/D26D9jLa5iF2'
+GOOGLE_MAPS_URL='http://maps.apple.com/?q=Hops+Museum'
 FACEBOOK_URL = 'https://www.facebook.com/thehopsmuseum/'
 TWITTER_URL = 'https://twitter.com/thehopsmuseum'
 INSTAGRAM_URL = 'https://www.instagram.com/behoppytime/'
 GITHUB_URL = 'https://github.com/arecker/hops'
 GOOGLE_ANALYTICS_ID = 'UA-42540208-11'
 
-VERSION = 'v1.0.4'
+VERSION = 'v1.0.5'
