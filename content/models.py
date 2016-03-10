@@ -144,10 +144,13 @@ class NewspaperArchive(models.Model):
 
 class EventQuerySet(models.QuerySet):
     def upcoming(self):
-        today = timezone.now()
+        today = timezone.now() - timezone.timedelta(hours=4)
         next_week = today + timezone.timedelta(weeks=1)
-        return self.filter(start__gte=today,
-                           start__lte=next_week).order_by('start')
+
+        currently_happening = Q(start__lte=today, end__gte=today)
+        this_week = Q(start__gte=today, start__lte=next_week)
+
+        return self.filter(currently_happening | this_week).order_by('start')
 
 
 class Event(models.Model):
