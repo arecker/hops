@@ -112,6 +112,11 @@ a:hover, .navbar-default .navbar-nav > li > a:focus {
   padding-right: 0%;
 }
 
+.statement-small-home {
+  text-align: center;
+}
+
+
 .headline {
   padding-top: 0%;
   padding-left: -10px;
