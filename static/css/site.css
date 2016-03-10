@@ -108,9 +108,22 @@ a:hover, .navbar-default .navbar-nav > li > a:focus {
 
 
 .statement-small {
-  text-align: center;
+  text-align: right;
+  padding-right: 0%;
 }
 
+.headline {
+  padding-top: 0%;
+  padding-left: -10px;
+}
+
+.hours {
+  padding-right: 0%;
+}
+
+.corner-logo {
+  margin-left: 0px;
+}
 
 /* Social Buttons */
 .social a:hover {
@@ -322,16 +335,21 @@ footer .img-responsive {
 }
 
 #newspaper-title {
-  font-size: 30px;
+  font-size: 20px;
   background-color: #e6ffe6;
+  text-align: center;
 }
 
 #newspaper {
   background-color: #e6ffe6;
+  margin-top: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 #newspaper-body {
-  font-size: 20px;
+  font-size: 15px;
+  text-align: center;
 }
 
 #donate h1 {
