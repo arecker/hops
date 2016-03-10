@@ -102,7 +102,7 @@
         <p><small>The Hops Museum would like to thank:</small></p>
         {% if ad.link %}
         <a href="{{ ad.link }}">
-              {% thumbnail ad.image "700x100" crop="center" as im %}
+              {% thumbnail ad.image "700x200" crop="center" as im %}
               <img src="{{ im.url }}" class="img-responsive">
               {% endthumbnail %}
             </a> {% else %} {% thumbnail ad.image "700x200" crop="center" as im %}
